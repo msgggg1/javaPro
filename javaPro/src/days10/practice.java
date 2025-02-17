@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * @author msg
- * @date 2025. 2. 14. - 오전 9:54:08
+ * @date 2025. 2. 14. - �삤�쟾 9:54:08
  * @subject
  * @content
  */
@@ -12,6 +12,7 @@ import java.util.Random;
 public class practice {
 
 	public static void main(String[] args) {
+		System.out.println("test");
 		
 		int n = 10;
 		int share, rest ;
