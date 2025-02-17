@@ -32,8 +32,14 @@ public class Ex01 {
 		
 		int index = 0;
 		for (int i = 0; i < avgs.length; i++) {
-			if (index == 10) {
-				
+			if (index == avgs.length) {
+				String [] tempNames = new String [avgs.length + 3];
+				int [] tempKors = new int [kors.length + 3];
+				int [] tempEngs = new int [kors.length + 3];
+				int [] tempEngs = new int [kors.length + 3];
+				int [] tempTots = new int [kors.length + 3];
+				double [] tempAvgs = new double [avgs.length + 3];
+			
 			} // if
 		} // for i
 		if
