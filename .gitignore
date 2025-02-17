@@ -1,1 +1,6 @@
-/.metadata/
+.metadata/
+.mylyn/
+.plugins/
+.lock
+.log
+version.ini
