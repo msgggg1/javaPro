@@ -19,13 +19,13 @@ public class Ex02 {
 		
 		// 2. 2가 있는 위치를 찾아서 100을 삽입
 		// 1.
-		int index = -1 ;// 못찾는경우 고려
-		for (int i = 0; i < m.length; i++) {
-			if (m[i]==2) index = i ;
-			if (index == -1) System.out.println("2는 없다");				
-			} // for
+//		int index = -1 ;// 못찾는경우 고려
+//		for (int i = 0; i < m.length; i++) {
+//			if (m[i]==2) index = i ;
+//			if (index == -1) System.out.println("2는 없다");				
+//			} // for
 		
-		int index = Arrays.stream(m).boxed().collect(Collectors.toList()).indexOf(2)
+//		int index = Arrays.stream(m).boxed().collect(Collectors.toList()).indexOf(2)
 
 		// 3.(암기) 람다와 스트림
 		// 배열 -> List 반환. indexOf 메서드

@@ -24,14 +24,6 @@ public class Ex03 {
 		System.out.println(Arrays.toString(m));
 
 
-		/*
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * */
-
 	} // main 
 
 	private static void shuffle(int[] m) {

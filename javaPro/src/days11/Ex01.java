@@ -2,6 +2,7 @@ package days11;
 
 import java.io.IOException;
 import java.io.StreamCorruptedException;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -34,28 +35,37 @@ public class Ex01 {
 		do {
 			System.out.println("이름 국어 영어 수학 점수 입력?");
 				if (cnt == avgs.length) {
-					String [] tempNames = new String [avgs.length + 3];
-					int [] tempKors = new int [kors.length + 3];
-					int [] tempEngs = new int [kors.length + 3];
-					int [] tempMats = new int [kors.length + 3];
-					int [] tempTots = new int [kors.length + 3];
-					double [] tempAvgs = new double [avgs.length + 3];
+//					String [] tempNames = new String [avgs.length + 3];
+//					int [] tempKors = new int [kors.length + 3];
+//					int [] tempEngs = new int [kors.length + 3];
+//					int [] tempMats = new int [kors.length + 3];
+//					int [] tempTots = new int [kors.length + 3];
+//					double [] tempAvgs = new double [avgs.length + 3];
+//					
+//					for (int i = 0; i < cnt; i++) {
+//						tempNames[i] = names[i];
+//						tempKors[i]= kors[i];
+//						tempEngs[i]= engs[i];
+//						tempMats[i]= mats[i];
+//						tempTots[i]= tots[i];
+//						tempAvgs[i]= avgs[i];
+//					}	                    
+//				
+//					names = tempNames;	
+//					kors = tempKors;
+//					engs = tempEngs;
+//					mats = tempMats;
+//					tots = tempTots;
+//					avgs = tempAvgs;
 					
-					for (int i = 0; i < cnt; i++) {
-						tempNames[i] = names[i];
-						tempKors[i]= kors[i];
-						tempEngs[i]= engs[i];
-						tempMats[i]= mats[i];
-						tempTots[i]= tots[i];
-						tempAvgs[i]= avgs[i];
-					}	                    
-				
-					names = tempNames;	
-					kors = tempKors;
-					engs = tempEngs;
-					mats = tempMats;
-					tots = tempTots;
-					avgs = tempAvgs;
+					int len = names.length;
+					names = Arrays.copyOf(names, len+3);
+					kors = Arrays.copyOf(kors, len+3);
+					engs = Arrays.copyOf(engs, len+3);
+					mats = Arrays.copyOf(mats, len+3);
+					tots = Arrays.copyOf(tots, len+3);
+					avgs = Arrays.copyOf(avgs, len+3);
+					
 					
 				} // if
 				names[cnt] = getName();
@@ -75,12 +85,9 @@ public class Ex01 {
 		
 		int [] ranks = new int [cnt];
 		for (int i = 0; i < cnt; i++) {
-			int rank = 1;
+			ranks[i] = 1;
 			for (int j = 0; j <cnt; j++) {
-				if (tots[i] < tots[j]) {
-					rank ++;
-				}//if
-				ranks[i] = rank;	
+				if (tots[i] < tots[j]) ranks[i]++;	
 			}
 		}
 		for (int j = 0; j < cnt; j++) {
