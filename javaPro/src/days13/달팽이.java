@@ -32,8 +32,13 @@ public class 달팽이 {
 
 	private static void fillM04(int[][] m) {
 		for (int i = 0 ; i < m.length; i++) {
+			if (condition) {
+				
+			} else {
+				
+			}
 			for (int j = 0; j < m[i].length; j++) {
-				m[j][4-i] = 5*i+j+1;
+				m[i][j] = 5*i+j+1;
 			} // for j 00 11
 			System.out.println();
 		} // for i
