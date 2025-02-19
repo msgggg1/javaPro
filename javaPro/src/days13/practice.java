@@ -6,74 +6,126 @@ import java.util.Scanner;
 public class practice {
 
 	public static void main(String[] args) {
+
+				// 정보처리 기사 실기
+				int [][] m = new int[5][5];
+
+//				 fillM01(m);
+//				 fillM02(m);
+//				fillM03(m);
+				fillM04(m);
+				
+
+				dispM(m);
+			} // main
+
+			private static void dispM(int[][] m) {
+				System.out.println("    [0열][1열][2열][3열][4열]");
+				for (int i = 0; i < m.length; i++) {
+					System.out.printf("[%d]행", i);
+					for (int j = 0; j < m[i].length; j++) {
+						System.out.printf("[%2d]",m[i][j]);
+					} //for
+					System.out.println();
+				} //for
 		
-		// 30개      0~20 정수
-				int [] m = { 0, 2, 12, 16, 7, 9, 2, 9, 0, 13, 7, 13, 3, 14, 10
-			            , 15, 11, 6, 19, 5, 2, 0, 16, 18, 15, 18, 0, 9, 13, 16 };
+	} //dispM
 
-				Scanner scanner = new Scanner(System.in);
-				System.out.print("> 배열에서 찾을 정수 입력?");
-				int n = scanner.nextInt();
+			/*
+		    0열 1열 2열 3열 4열
+		0행 [ 5][10][15][20][25]
+		1행 [ 4][ 9][14][19][24]
+		2행 [ 3][ 8][13][18][23]
+		3행 [ 2][ 7][12][17][22]
+		4행 [ 1][ 6][11][16][21]
+		*/
+			private static void fillM04(int[][] m) {
+				// [1] 값
+				/*
+				for (int i = 0; i < m.length; i++) {           // 행크기			 
+					for (int j = 0; j < m[i].length; j++) {    // 열크기
+						   m[i][j] = 5-i + j*5;				   
+					} // for j
+				} // for i
+				*/
 				
-				
-				// 찾는 값이 배열 속에 없다면 -1 반환
-//				int index = sequenceSearch(m,n);
-				
-				int [] indexArr = sequenceSearch(m, n);
-				System.out.println(Arrays.toString(indexArr));
-				
-				// 만약에 찾는 값이 배열 속에 없다면   -1 반환
-			      // int index = sequenceSearch(m, n);
-				
-				if (indexArr.length != 0) {
-					for (int i = 0; i < indexArr.length; i++) {
-						System.out.printf("찾는 정수 %d는 %d 위치에 있다.\n", n, indexArr[i]);
-					} else {
-						System.out.println("찾는 정수는 없다.");
-				} // if
-			    
-			      
-			      /*
-			      int i = 0;
-			      int index;
-			      while(   (index = indexArr[i++]) != -1  ) {  
-			         System.out.printf("찾는 정수 %d는 %d 위치에 있다.\n", n, index);
-			      } // while
-			      */
-//			        [1]
-//			      while(true) {
-//			         int index = indexArr[i++];
-//			         if(  index == -1 ) break;
-//			         System.out.printf("찾는 정수 %d는 %d 위치에 있다.\n", n, index);
-//			      } // while
-			        
-			      /*
-			      if (index != -1 ) {
-			         System.out.printf("찾는 정수 %d는 %d 위치에 있다.", n, index);
-			      } else {  // X
-			         System.out.println("찾는 정수는 없다.");
-			      } // if
-			      */
+				// [2] 방(요소) 
+				/* 00  40
+				 * 01  30
+				 * 02  20
+				 * 03  10
+				 * 04  00
+				 * 
+				 * 10  41
+				 * 11  31
+				 * 12  21
+				 * 13  11
+				 * 14  01
+				 *  
+				 * */
+				for (int i = 0; i < m.length; i++) {           // 행크기			 
+					for (int j = 0; j < m[i].length; j++) {    // 열크기
+						 m[4-j][i] = 5*i+j+1;
+					} // for j
+				} // for i
+			 
 
-			   } // main
+			}
 
-	private static int[] sequenceSearch(int[] m, int n) {
-		int [] temp = new int [m.length];
-		Arrays.fill(temp, -1);
-		
-		int index = 0;
-		for (int i = 0; i < m.length; i++) {
-			if (m[i] == n) temp[index++] =  i;
-		} // for i
-		
-		return Arrays.copyOf(temp, index);
-	}
-			      
-			   
+			/*
+		    0열 1열 2열 3열 4열
+		0행 [ 1][ 2][ 3][ 4][ 5]
+		1행 [10][ 9][ 8][ 7][ 6]
+		2행 [11][12][13][14][15]
+		3행 [20][19][18][17][16]
+		4행 [21][22][23][24][25]
+			 */		
+			private static void fillM03(int[][] m) {
+				
+//				for (int i = 0; i < m.length; i++) {
+//					for (int j = 0; j < m[i].length; j++) {
+//						m[i][j] = (i%2 == 0) ? 5*i+j+1 :5*i+5-j  ;
+//					} //for
+//				} //for
+//			}
+				
+				for (int i = 0; i < m.length; i++) {
+					for (int j = 0; j < m[i].length; j++) {
+						m[i][i%2==0?j:4-j] = 5*i+j+1;
+					} //for
+				} //for
+			}
+				
 
-			   
 
-		
-	
+
+
+			private static void fillM02(int[][] m) {
+				/*
+				 * i=0 j=01234
+				 * i=1 j=01234
+				 * i=2 j=01234
+				 * i=3 j=01234
+				 * i=4 j=01234
+				 */
+				for (int i = 0, v = 1; i < m.length; i++) {
+					for (int j = 0; j < m[i].length; j++, v++) {
+						m[i][j] = 5*(5-i)-j;
+					} //for
+				} //for
+			} //m02
+			
+
+			private static void fillM01(int[][] m) {
+				for (int i = 0; i < m.length; i++) {
+					for (int j = 0, v = 1; j < m[i].length; j++, v++) {
+						m[i][j] = v;
+					} //for
+				} //for
+			}
+
+
+
+
 
 } // class
