@@ -16,13 +16,6 @@ package days08;
 public class Ex10 {
 
 	public static void main(String[] args) {
-		/*
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * */
 		
 		int x =10, y = 20;
 		System.out.printf("> x=%d, y=%d\n", x,y);
@@ -46,6 +39,7 @@ public class Ex10 {
 		x = y;        
 		y = temp;     
 		return ;
+		
 		
 	}
 
