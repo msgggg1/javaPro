@@ -29,6 +29,21 @@ public class Ex03 {
 		myCar.dispCarInfo();
 		
 		// *****nullPointerException : new Car(); 인스턴스화 안됐다
+		
+		/*                                          Car 클래스
+		 * 
+		 *                                          [0x100]
+		 *   인스턴스                                 myCar
+		 *   [name][speed][wc][메주소]                변수
+		 *   0x100                                   지역변수
+		 *                                          참조변수
+		 *                                          객체명
+		 *                                          
+		 *                                          
+		 *               [dispCarInto()]
+		 *               주소                            
+		 * */
+		
 	
 		
 	} // main
