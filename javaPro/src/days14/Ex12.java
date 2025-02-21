@@ -72,21 +72,14 @@ public class Ex12 {
 		// 등수 처리
 		// tot 비교
 		for (int i = 0; i < cnt; i++) {
-			ranks[cnt] = s.getRank(tots, cnt)			
+			for (int j = 0; j < cnt; j++) {
+				if (students[i].tot < students[j].tot) students[i].rank ++ ;		
+			} // if		
 		} // for i
-		
-		int [] tots = new int [cnt];
-		for (int i = 0; i < cnt; i++) {
-			tots[i] = tot;
+		for (int i = 0; i <cnt; i++) {
+				System.out.println(students[i].s);
 		} // for i
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 	} // main
 
