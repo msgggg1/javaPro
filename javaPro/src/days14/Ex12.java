@@ -22,6 +22,23 @@ import java.util.Scanner;
 public class Ex12 {
 
 	public static void main(String[] args) throws IOException {
+		// 클래스(객체) 배열
+				// 객체 배열안에 객체배열이 있다면 어떤 모양인지 궁금합니다
+				//Person[] pArr = new Person[3];
+				// [0x200][null][null]                      [0x100]
+				//  pArr[0]   pArr[2]                         pArr
+				// 0x100
+				
+				// pArr[0] = new Person();
+				// [name][age][0x500][][]
+				// 0x200
+				
+				// [][][][][][][][][][][]
+				// 0x500		
+				
+				//                        [work()][run()]
+				
+		
 		String name;
 		int kor, eng, mat, tot, rank;
 		double avg;
@@ -35,7 +52,6 @@ public class Ex12 {
 		char con = 'y';
 		
 		Scanner scanner = new Scanner(System.in);
-		Student s = new Student();
 		
 		do {
 			// 한 학생의 정보를 입력
@@ -49,6 +65,7 @@ public class Ex12 {
 			avg = (double)tot/3;
 			rank = 1;// rank 계 속 바뀜 -> 마지막에 처리
 			// 각 배열에 요소로 추가. (각 배열의 index ==> cnt 처리)
+			Student s = new Student();
 			s.no = cnt +1 ;
 			s.name = name;
 			s.kor = kor;
@@ -77,7 +94,7 @@ public class Ex12 {
 			} // if		
 		} // for i
 		for (int i = 0; i <cnt; i++) {
-				System.out.println(students[i].s);
+				System.out.println(students[i].getInfo());
 		} // for i
 
 		

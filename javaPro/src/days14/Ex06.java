@@ -33,7 +33,7 @@ public class Ex06 {
 // Ex06.java 파일 생성하면 자바 파일 안에는 반드시 1개의 public 선언된 클래스(자바파일명)가 있어야 한다. 
 // / 나머지는 접근지정자 public 올 수 없음. public은 하나만 가능. 
 //public class Tv{
-class Tv{	// 각각 컴파일 되어서 Ex06.class, Tv.class 클래스 당 하나의 클래스파일 생성됨
+class Tv{	// 각각 컴파일 되어서 bin폴더에 Ex06.class, Tv.class 클래스 당 하나의 클래스파일 생성됨
 	
 	
 	//필드 선언 형식

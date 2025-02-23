@@ -20,9 +20,10 @@ public class MyPoint {
 	}
 
 	// 메서드
-	public MyPoint plusMyPoint(MyPoint p) {
-		x += p.x;
-		y += p.y;
+	// p1.plusMyPoint(                 p2 );
+	public MyPoint plusMyPoint(MyPoint p) {// 클래스 복사
+		this.x += p.x;
+		this.y += p.y;
 		return this; // [this 3 용도]
 	}
 	
@@ -31,7 +32,7 @@ public class MyPoint {
 	// p1.dispMyPoint();
 	// p2.dispMyPoint();	
 	public void dispMyPoint() {
-		System.out.printf("> x=%d, y=%d\n", x, y);// 호출한 객체.x , 호출한 객체.y 이용
+		System.out.printf("> x=%d, y=%d\n", this.x, this.y);// 호출한 객체.x , 호출한 객체.y 이용
 	}
 
 	// p2.offsetPoint(100)
@@ -45,7 +46,7 @@ public class MyPoint {
 	public MyPoint offsetPoint(int d) { // 참조형 리턴자료형
 	
 		MyPoint p = new MyPoint(); // 새로운 객체 만들어서 돌림 --> 클래스 복사
-		p.x = x + d;
+		p.x = x + d;  
 		p.y = y + d;
 		
 		return p;

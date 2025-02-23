@@ -12,29 +12,25 @@ import days14.Student;
  * @author msg
  * @date 2025. 2. 21. - 오전 10:48:51
  * @subject 3학년 10반 30명 학생 
- * @content [ 문제 제시]
+ * @content [ 문제 제시 ]
  */
 
 public class Ex01_02 {
 
 	public static void main(String[] args) throws IOException {
-		//		11. 3 반의 30명의 학생의 성적 관리
-		//	    Student 클래스를 선언 후 
-		//	    클래스 배열을 사용해서 처리하세요
-		//	    ( 입력, 성적 처리, 출력 )  
 
 		String name;
 		int kor, eng, mat, tot, rank, wrank;
 		double avg;
-		
+
 		int year = 3;
 		final int CLASS_COUNT = 3;
 		final int STUDENT_COUNT = 30;
 
 		Student [][][] students = new Student[year][CLASS_COUNT][STUDENT_COUNT];
-		
-		int [] years = new int [year];
+
 		int [] cnts = new int [CLASS_COUNT];
+		int [] ycnts = new int [year];
 
 		char con = 'y';
 		Scanner scanner = new Scanner(System.in);
@@ -44,8 +40,8 @@ public class Ex01_02 {
 			// 가변 배열 ( 30명 이상 처리 나중에)
 			// 1. 학년입력
 			System.out.print("> 1.학년 입력?");
-			ban = scanner.nextInt(); // 1 2 3
-			
+			year = scanner.nextInt(); // 1 2 3
+
 			//
 			System.out.print("> 2.반 입력?");
 			ban = scanner.nextInt(); // 1 2 3
@@ -65,56 +61,77 @@ public class Ex01_02 {
 			wrank = 1;
 			// 각 배열에 요소로 추가. ( 각 배열의 index ==> cnt 처리 )
 			int banIndex = ban -1	;
-			students[banIndex][cnts[banIndex]]= new Student() ;
-			students[banIndex][cnts[banIndex]].no = cnts[banIndex]+1 ;
-			students[banIndex][cnts[banIndex]].name = name ;
-			students[banIndex][cnts[banIndex]].kor = kor;
-			students[banIndex][cnts[banIndex]].eng = eng;
-			students[banIndex][cnts[banIndex]].mat = mat;
-			students[banIndex][cnts[banIndex]].tot = tot;
-			students[banIndex][cnts[banIndex]].avg = avg;
-			students[banIndex][cnts[banIndex]].rank = rank;
-			students[banIndex][cnts[banIndex]].wrank = wrank;
+			int yearIndex = year -1 ;
+			students[yearIndex][banIndex][cnts[banIndex]]= new Student();		
+			students[yearIndex][banIndex][cnts[banIndex]].year = year;
+			students[yearIndex][banIndex][cnts[banIndex]].no = cnts[banIndex]+1 ;
+			students[yearIndex][banIndex][cnts[banIndex]].name = name ;
+			students[yearIndex][banIndex][cnts[banIndex]].kor = kor;
+			students[yearIndex][banIndex][cnts[banIndex]].eng = eng;
+			students[yearIndex][banIndex][cnts[banIndex]].mat = mat;
+			students[yearIndex][banIndex][cnts[banIndex]].tot = tot;
+			students[yearIndex][banIndex][cnts[banIndex]].avg = avg;
+			students[yearIndex][banIndex][cnts[banIndex]].rank = rank;
+			students[yearIndex][banIndex][cnts[banIndex]].wrank = wrank;
 
 			// 입력받은 학생수 1증가
 			cnts[banIndex]++;
+			ycnts[yearIndex]++;
 			// 입력 계속 여부 체크
 			System.out.print("> 학생 입력 계속 ? ");
 			con = (char)System.in.read();
 			System.in.skip(System.in.available()); // 13, 10
-			
+
 		} while ( Character.toUpperCase(con) == 'Y' );
-		
+
 		//반등수/전교등수 처리 
-		for (int i = 0; i < CLASS_COUNT; i++) {
-			for (int j = 0; j < cnts[i]; j++) {		
-				
-				for (int i2 = 0; i2 <CLASS_COUNT ; i2++) {
-					for (int j2 = 0; j2 < cnts[i2]; j2++) {		
-						
-						if(students[i][j].tot <students[i2][j2].tot) {
-							students[i][j].wrank++;
-							if (i == i2) {
-								students[i][j].rank ++;
-							} // if
-						} // 
-					} // for j
-				} // for i
-				
-			} // for j
-		} // for i
+		//학년
+		for (int i3 = 0; i3 < ycnts.length ; i3++) {
 		
+			for (int i = 0; i < CLASS_COUNT; i++) {
+				for (int j = 0; j < cnts[i]; j++) {		
+
+					for (int i2 = 0; i2 <CLASS_COUNT ; i2++) {
+						for (int j2 = 0; j2 < cnts[i2]; j2++) {		
+							// nullpointerException
+							if (students[i3][i][j] != null && students[i3][i2][j2] != null) {
+								if(students[i3][i][j].tot <students[i3][i2][j2].tot) {
+								students[i3][i][j].wrank++;
+								if (i == i2) {
+									students[i3][i][j].rank ++;
+								} // if
+							} // if
+							
+							} // 
+						} // for j
+					} // for i
+
+				} // for j
+			} // for i	
+		} //for
+
+
+
 
 		int totalCnt = IntStream.of(cnts).sum(); // int -> 스트림으로 바꿈
 		System.out.printf("[전체 학생 수 : %d명]\n", totalCnt);
 
-		for (int i = 0; i < cnts.length; i++) {
-			System.out.printf("[%d]반의 학생수 : %d명\n", i+1, cnts[i]);
-			// 그 반 학생정보 출력
-			for (int j = 0; j < cnts[i]; j++) {
-				System.out.print("\t"+students[i][j].getInfo());
-			} // for i
-		} // for j
+		for (int i2 = 0; i2 < year; i2++) {
+			System.out.printf("[%d학년] 학생수 : %d명\n", i2+1, ycnts[i2] );
+			for (int i = 0; i < cnts.length; i++) {
+				System.out.printf("[%d]반의 학생수 : %d명\n", i+1, cnts[i]);
+				// 그 반 학생정보 출력
+				for (int j = 0; j < cnts[i]; j++) {
+					//nullpointerException
+					if (students[i2][i][j] != null) {
+						System.out.print("\t"+students[i2][i][j].getInfo());
+					} // if
+				} // for i
+			} // for j
+		} //for
+		
+
+
 		System.out.println("end");
 
 	} // main

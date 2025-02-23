@@ -8,7 +8,7 @@ public class Save {
 	private String name; // 예금주
 	private int money; // 예금액
 	
-	// 클래스(static) 변수 또는 필드, 공유변수(shared), 정적(static) 변수 // 클래스 선언과 동시에 메모리에 올라감 // private이어도 static -> 메모리에는 올라가있음.
+	// 	클래스(static) 변수 또는 필드, 공유변수(shared), 정적(static) 변수 // 클래스 선언과 동시에 메모리에 올라감 // private이어도 static -> 메모리에는 올라가있음.
 	private static double rate = 0.04; // 이자율 - // static 인스턴스 생성하지 않더라도 기억공간에 올라감. 모든 인스턴스가 공유해서 사용
 	
 	// 생성자
@@ -57,8 +57,8 @@ public class Save {
 	public static void setRate(double rate) {
 		//Cannot use this in a static context
 		//this.rate = rate; this static안에서 못 씀
-//		Save.rate = rate; //클래스명.rate 
-		rate = rate; // 같은 클래스라서 생략
+		Save.rate = rate; //클래스명.rate 
+//		rate = rate; // 같은 클래스라서 생략 --> 안됨
 	}
 	
 	

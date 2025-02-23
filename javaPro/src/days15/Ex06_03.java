@@ -12,11 +12,15 @@ public class Ex06_03 {
 
 	public static void main(String[] args) {
 		
-		//MyPoint 클래스 이용
+	//  [MyPoint 클래스 이용해서 설명]\
 		MyPoint p1 = new MyPoint(1,2);
 		MyPoint p2 = new MyPoint(100,200);
 		
-
+		// 클래스 복사
+	    //MyPoint p3 =  p1.plusMyPoint(p2);
+	    //p3.dispMyPoint();
+	    p1.plusMyPoint(p2).dispMyPoint();
+	    p1.dispMyPoint();
 	} // main
 
 } // class

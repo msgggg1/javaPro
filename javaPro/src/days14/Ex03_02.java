@@ -14,7 +14,7 @@ public class Ex03_02 {
 
 			} // main
 			
-			// 전달되는 객체명과 매개변수명은 꼭 동일해야 하나요?
+			// 전달되는 객체명과 매개변수명은 꼭 동일해야 하나요? - 아니요
 			// Car car = new Car();
 			public static void dispCar( Car car ) {
 				//

@@ -1,3 +1,4 @@
+
 package days15;
 
 import java.io.IOException;
@@ -97,6 +98,8 @@ public class Ex01 {
 		} // for i
 		
 
+		// 학생정보출력.
+		// int totalCnt = cnts[0]+cnts[1]+cnts[2] ;
 		int totalCnt = IntStream.of(cnts).sum(); // int -> 스트림으로 바꿈
 		System.out.printf("[전체 학생 수 : %d명]\n", totalCnt);
 

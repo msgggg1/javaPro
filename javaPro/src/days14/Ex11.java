@@ -29,6 +29,11 @@ public class Ex11 {
 
 		int age; // 지역변수
 		
+	//   i 지역변수 - for {} 블럭에서만 사용되는 지역변수
+			for (int i = 0; i < args.length; i++) {
+				
+			} // for i
+
 	} // main
 
 } // class

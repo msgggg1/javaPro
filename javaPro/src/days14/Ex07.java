@@ -13,6 +13,21 @@ public class Ex07 {
 		// 클래스 복사(copy)
 		// 클래스 복제(clone) - 얉은 복제 / 깊은 복제 
 		
+		/*  인스턴스                                            객체
+		 *  [color][power][channel][][][]                    [0x100]
+		 *  0x100                                             t1
+		 *  
+		 *                                                   [0x100]
+		 *                                                    t3
+		 *  
+		 *  인스턴스                                            객체
+		 *  [color][power][channel][][][]                    [0x200]
+		 *  0x200                                              t2
+		 *  
+		 *  
+		 *  
+		 *                 [power()][channelUp()][channelDown()]
+		 * */
 		
 		//메소드는 한번만 올라감
 		// 클래스 복제 = 객체 복제

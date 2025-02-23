@@ -26,7 +26,7 @@ public class Ex04 {
 		 * 1. 일종의 메서드이다. (함수다)
 		 * 2. 리턴자료형 아예 안붙임. void도 x
 		 * 3. 반드시 메서드명은 클래스명과 동일하게 설정.
-		 * 4. "디폴트 생성자(default constructor): 매개변수 없는 생성자
+		 * 4. "디폴트 생성자(default constructor)": 매개변수 없는 생성자
 		 * 5. 생성자의 역할 : 필드 초기화 -> 리턴할 필요가 없음
 		 * 6. 생성자 호출되는 시기: 인위적으로 생성자를 호출할 수 없다. (호출하고싶다고 할수없음)
 		 * 						객체를 생성할때만 자동으로 호출
@@ -48,8 +48,13 @@ public class Ex04 {
 		MyPoint p1 = new MyPoint(10,20);// (); 객체생성시 무조건 생성자 함수 호출.생성자 함수의 매개변수를 넘기겠다. 빈();매개변수없는 생성자 함수 넘긴다는 뜻
 		p1.dispMyPoint();
 		
+		/*
 		Date d = new Date();
-		d.setYear(2000-1900); //getter, setter
+		d.setYear(2000-1900);   // getter, setter
+		d.setMonth(10-1);
+		*/
+		Date d = new Date(2000-1900, 10-1, 1);
+		System.out.println( d.toLocaleString() );
 		
 	} // main
 

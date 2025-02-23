@@ -13,6 +13,9 @@ public class Ex06_02 {
 	public static void main(String[] args) {
 	
 		new Calc().btnExec.btnExec_click();
+		
+//		Calc calc = new Calc();
+//		calc.btnExec.btnExec_click();
 
 	} // main
 

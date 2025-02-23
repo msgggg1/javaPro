@@ -2,6 +2,7 @@ package days14;
 
 public class Student {
 	//필드
+	public int year;
 	public int no;
 	public String name;
 	public int kor, eng, mat, tot, rank, wrank;

@@ -9,6 +9,15 @@ package days14;
 
 public class Ex04 {
 	
+	/* 내부(inner) 클래스
+	private static class X{
+		
+	} 
+	
+	protected class Y{
+		
+	}
+	*/
 
 	public static void main(String[] args) {
 		
