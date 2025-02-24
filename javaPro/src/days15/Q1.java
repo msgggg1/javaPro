@@ -54,31 +54,3 @@ class Calc2 {
 	}
 	
 } /// Calc2
-
-
-class Button2 {
-
-	String text;
-	Calc2 calc2; // 필드 인스턴스 변수에 없으면 받지를 못해서 변수 생성??
-	
-	public Button2() {
-		
-	};
-
-	public Button2(String text) {
-		this.text = text;
-	};
-	
-	
-	public Button2(String text, Calc2 calc2) {
-		this(text);
-		this.calc2 = calc2;
-		
-	}
-	
-	public void btnExec_click() {
-		String result = "3 + 5 = 8" ;
-		this.calc2.execDisp(result);
-	}
-	
-}

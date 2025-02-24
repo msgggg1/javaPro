@@ -1,0 +1,86 @@
+package days16;
+
+/**
+ * @author msg
+ * @date 2025. 2. 24. - 오후 2:08:09
+ * @subject
+ * @content
+ */
+
+// 부모클래스
+public class Point2D {
+	
+	//필드
+	private int x;
+	private int y;
+	
+	// 생성자 - 생성자는 상속되지 않는다. 
+	public Point2D() {
+		System.out.println("> Point2D 디폴트 생성자 호출");
+	}
+
+	public Point2D(int a) {
+		this.x = a;
+		this.y = a;
+		System.out.println("> Point2D 1 생성자 호출");
+	}
+
+
+	public Point2D(int x, int y) {
+		super();
+		this.x = x;
+		this.y = y;
+		System.out.println("> Point2D 2 생성자 호출");
+	}
+
+	
+	//get, set
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	// 메소드
+	public void dispPoint2D() {
+		System.out.printf("x=%d, y=%d\n", this.x, this.y);
+	}
+	
+	public String getXY() {
+		return String.format("(%d, %d)", this.x, this.y);
+	}
+	
+	public Point2D offsetPoint(int i) {
+		x += i;
+		y += i;
+		return this ; // this의 세번째 용도 / 참조현 반환자료형
+	}
+	
+	public void offsetPoint(Point2D p) { // 참조형 매개변수
+		x += p.x;
+		y += p.y;
+	}
+	
+	public Point2D plus(Point2D p) {
+		int xValue = x + p.x;
+		int yValue = y +p.y;
+		
+		Point2D newp = new Point2D();
+		newp.x = xValue;
+		newp.y = yValue;
+		
+		return newp;
+		
+	}
+
+} // class
