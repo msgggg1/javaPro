@@ -83,22 +83,20 @@ public class Point3D extends Point2D{
 		}
 		
 		public void offsetPoint(Point3D p) { // 참조형 매개변수
-			x += p.x;
-			y += p.y;
-			this.setX(z);
-			
-			
+			this.setX(this.getX()+p.getX());
+			this.setY(this.getY()+p.getY());			
+				
 			z += p.z;
 		}
 		
 		public Point3D plus(Point3D p) {
-			int xValue = x + p.x;
-			int yValue = y +p.y;
+			int xValue = this.getX()+p.getX();
+			int yValue = this.getY()+p.getY();
 			int zValue = z + p.z;
 			
 			Point3D newp = new Point3D();
-			newp.x = xValue;
-			newp.y = yValue;
+			newp.this.getX() = xValue;
+			newp.this.getY() = yValue;
 			newp.z = zValue;
 			
 			return newp;
