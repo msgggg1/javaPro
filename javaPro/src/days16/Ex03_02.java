@@ -28,14 +28,17 @@ public class Ex03_02 {
 	// 2. 오버로딩을 하지 않는 게 좋다. 
 	// 3. 비효율적이기 때문에 꼭 필요한 곳에서만 사용
 	// 4. 제일 마지막에 가변인자를 선언한다. 
+
 	public static int sum(int...args) {
+		
 		int result = 0;
 		for (int i : args) {
 			result += i;
 		}
-		return result ;
+		
+		return result;
+		
 	}
-	
 	
 	
 } // class

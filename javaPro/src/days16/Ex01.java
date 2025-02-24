@@ -1,5 +1,6 @@
 package days16;
 
+//import static java.lang.Math.random;
 import static java.lang.Math.* ; // Math. 안써도 됨. 
 
 /**
@@ -15,6 +16,13 @@ public class Ex01 {
 		System.out.println(abs(-10));
 		System.out.println(random());
 		
+		/*
+		Math.abs(-10);
+		Math.random();
+		Math.max(2, 5);
+		Math.min(2, 5);
+		Math.pow(2, 5);
+		*/
 
 
 	} // main

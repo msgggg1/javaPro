@@ -78,9 +78,9 @@ public class Point3D extends Point2D{
 		int zValue =  z + p.z;
 
 		Point3D newp = new Point3D(xValue, yValue, zValue);
-		//newp.x = xValue;
-		//newp.y = yValue;
-		//newp.z = zValue;
+//		newp.x = xValue;
+//		newp.y = yValue;
+//		newp.z = zValue;
 
 		return newp;
 	}

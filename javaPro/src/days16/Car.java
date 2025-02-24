@@ -21,8 +21,6 @@ public class Car {
 	
 	
 	// getter, setter
-	
-	
 	public Engine getEngine() {
 		return engine;
 	}

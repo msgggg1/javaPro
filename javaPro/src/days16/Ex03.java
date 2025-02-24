@@ -13,7 +13,12 @@ public class Ex03 {
 			
 		System.out.println(sum(1,2));
 		System.out.println(sum(1,2,3));
+		
+		System.out.println(  sum(1, 2, 3, 4) );
 
+		int [] m = {1,2,3,4,5,6};
+		System.out.println( sum(m) );
+		
 	} // main
 
 	// [오버로딩]
@@ -25,13 +30,18 @@ public class Ex03 {
 	public static int sum(int a, int b, int c) {
 		return a + b + c ;
 	}
+	// 4 정수의 합을 구해서 반환하는 메서드 
+	public static int sum(int a, int b, int c, int d) {
+		return a + b + c + d;
+	}
 
 	public static int sum(int [] args) {
 		int result = 0;
 		for (int i : args) {
 			result += i;
 		}
-		return result ;
-	}
+		return result;
+	} 
+	
 	
 } // class

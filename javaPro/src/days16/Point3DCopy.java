@@ -76,22 +76,20 @@ public class Point3DCopy {
 		public void offsetPoint(Point3DCopy p) { // 참조형 매개변수
 			// 부모 생성자 인위적으로 호출x/ 일반메서드 안에서 생성자, 부모 생성자 인위적으로 호출 못함.
 			// super x
-			this.setX(this.getX()+p.getX());
-			this.setY(this.getY()+p.getY());
-//			x += p.x;
-//			y += p.y;
+			x += p.x;
+			y += p.y;
 			z += p.z;
 		}
 		
 		public Point3DCopy plus(Point3DCopy p) {
-			int xValue = this.getX() + p.getX();
-			int yValue = this.getY() + p.getY();;
+			int xValue =  x + p.x;
+			int yValue =  y + p.y;
 			int zValue = z + p.z;
 			
-			Point3DCopy newp = new Point3DCopy(xValue, yValue, zValue);
-//			newp.x = xValue;
-//			newp.y = yValue;
-//			newp.z = zValue;
+			Point3DCopy newp = new Point3DCopy();
+			newp.x = xValue;
+			newp.y = yValue;
+			newp.z = zValue;
 			
 			return newp;
 			

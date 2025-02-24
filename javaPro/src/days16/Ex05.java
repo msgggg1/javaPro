@@ -32,6 +32,11 @@ public class Ex05 {
 		System.out.println(m2.age);
 		
 		System.out.println(m2.rate);
+		/*
+		String name ;
+		// The local variable name may not have been initialized
+		System.out.println( name );
+		*/
 
 	} // main
 
@@ -51,14 +56,6 @@ class Member{
 	
 	// 순서 : 명시적 초기화 > 인스턴스 초기화 블럭 >  생성자 초기화
 	
-	// 생성자
-	Member(){
-//		count ++;
-//		serialNumber = count;
-		name = "무";
-		System.out.println("> Member 디폴트 생성자 호출됨.");
-	}
-	
 	// 생성자가 오버로딩되어 있을 때 중복 코딩이 있다면 초기화 블럭 사용.
 	// [인스턴스 초기화 블럭] - 생성자 블럭보다 먼저 호출
 	{
@@ -75,6 +72,16 @@ class Member{
 	}
 	
 	
+	// 생성자
+	Member(){
+//		count ++;
+//		serialNumber = count;
+		name = "무";
+		System.out.println("> Member 디폴트 생성자 호출됨.");
+	}
+	
+	
+	
 	Member(String name){
 //		count ++;                     // 중복
 //		serialNumber = count;
@@ -83,12 +90,8 @@ class Member{
 				+ "");
 	}
 	
-	
-	
 	// 메서드
 
-	
-	
 }
 
 

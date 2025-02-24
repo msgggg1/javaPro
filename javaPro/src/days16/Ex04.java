@@ -4,15 +4,22 @@ package days16;
  * @author msg
  * @date 2025. 2. 24. - 오전 11:16:29
  * @subject
- * @content
+ * @content java.exe Ex04  C:\\a.txt  D:\\temp\\a.txt   ->   
+ *           main() {  프로그램 시작~    매개변수 String 주고...
+ *           
+ *           } 프로그램 종료
+ *           
+ *           java.exe  FileCopy  원본파일경로  복사할곳경로
  */
+
 public class Ex04 {
 
 	public static void main(String[] args) {
 		
-		for (int i = 0; i < args.length; i++) {
-			System.out.printf("args[%d]=%s\n", i, args[i]);
+		for (int i = 0; i < args.length ; i++) {
+			System.out.printf("args[%d]=%s\n", i, args[i]); 
 		} // for i
+
 		System.out.println("end");
 	} // main
 

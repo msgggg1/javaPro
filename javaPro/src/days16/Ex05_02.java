@@ -31,7 +31,7 @@ class Document{
 	static int count = 1; // 개념적으로 클래스당 하나 있어야 함 -> static
 	
 	// 인스턴스 초기화 블럭
-/*static x*/{
+ { // static .x -> 한번만 로드되기 때문에 값이 증가하지 않고 고정됨. 
 		count ++; //인스턴스 초기화 블럭 (생성자 중복)
 	}
 	
