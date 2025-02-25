@@ -43,5 +43,31 @@ public class Ex11 {
 // 추상클래스 다른거 다 가지고 있음. 추상화 작업 시 사용. 공통적인 부분 빼놓기위한 클래스 
 // 인터페이스 상수, 추상메소드만 가지고 있음. 
 
+interface ILotto{
+	int LENGTH = 6;
+	void fillLotto(int [] lotto);
+	void dispLotto(int [] lotto);
+	void isDuplicateLotto(int [] lotto);
+}
+
+interface Player2{
+	void stop();
+	void play();
+}
+
+class A_Player implements Player2{
+
+	@Override
+	public void stop() {
+		// 1주 동안 구현
+		
+	}
+
+	@Override
+	public void play() {
+		// 1주 동안 구현
+	}
+	
+}
 
 

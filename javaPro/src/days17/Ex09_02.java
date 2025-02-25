@@ -30,6 +30,18 @@ class Marine extends Unit{
 	void stimPack() {
 		
 	}
+	
+	@Override
+	void move(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void stop() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
 //탱크
@@ -37,6 +49,17 @@ class Tank extends Unit{
 	
 	//공격 모드를 변환하는 메서드
 	void changeMode() {
+		
+	}
+	@Override
+	void move(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void stop() {
+		// TODO Auto-generated method stub
 		
 	}
 }
@@ -48,5 +71,17 @@ class DropShip extends Unit{
 	void load() {}
 	// 짐을 내리는 작업
 	void unload() {}
+	
+	@Override
+	void move(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void stop() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 */

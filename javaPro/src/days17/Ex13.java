@@ -31,6 +31,7 @@ public class Ex13 {
 
 // 2000년도 A 개발자 선언, 구현
 interface Parseable{
+	
 	// 구문분석하는 추상 메소드 선언
 	void parse(String fileName);
 
@@ -41,7 +42,7 @@ interface Parseable{
 	} // 몸체 구성
 
 	/*public abstract*/default void print() { // 오버라이딩 안해도 사용가능  // default라고 되어 있어도 public임 // default 접근지정자아님
-		//default 메서드 != default 접근제어자
+		//default 메서드 =/= default 접근제어자
 		// default 기타제어자
 		System.out.println("인쇄 기능 구현된 메소드 추가");
 	}
@@ -119,7 +120,7 @@ class WORDParser implements Parseable{
 // parser 4개 -> 1개의 파서를 찾아서 사용할 수 있도록 관리하는 클래스
 // ~~Manager // 관리자 역할
 class ParserManager{
-	
+//											  xml, html, pdf 등등
 	public static Parseable getParser(String docType) { // 매개변수 다형성
 		
 		Parseable parser = null;

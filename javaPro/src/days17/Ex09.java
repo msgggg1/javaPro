@@ -4,7 +4,7 @@ package days17;
  * @author msg
  * @date 2025. 2. 25. - 오후 2:06:49
  * @subject 클래스 설계 시 
- * @content 추상화 작업 언제/어떻게
+ * @content 추상화 작업 언제/어떻게 하는지 이해
  */
 public class Ex09 {
 
