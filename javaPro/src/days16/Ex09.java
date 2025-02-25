@@ -21,6 +21,7 @@ public class Ex09 {
 
 		// 자식 객체 c를 생성
 		Child c = new Child();
+		c.dispChild();
 		
 		System.out.println("end");
 	} // main
@@ -58,12 +59,12 @@ class Child extends Parent{
 	// test(){} 상속
 	// 부모의 생성자  상속x
 	
-	int x = 20; // 부모에게 물려받은 똑같은 변수 선언 가능함.
+	int x = 20; // 부모에게 물려받은 x 필드가 존재하는 데 똑같은 이름으로 x 선언 가능함.
 	int y ; //새로 추가된 필드
 	
 	public Child() {
 		super(); // 컴파일러가 추가. 부모의 디폴트 생성자가 호출
-		System.out.println("> Child 디폴트 생성자");
+		System.out.println("> Child 디폴트 생성자 호출됨");
 	}
 	
 	void dispChild() {

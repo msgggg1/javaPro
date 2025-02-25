@@ -19,7 +19,7 @@ public class Ex11 {
 	         Regular             Temp
 	           ↑
 	        SalesMan
-	        
+
 	           1. 상속성 정리
 	           2. 다형성/인터페이스
 	           3. 업캐스팅, 다운케스팅
@@ -27,16 +27,33 @@ public class Ex11 {
 	           5. 추상화(추상메소드, 추상클래스)
 	           6. this, super 키워드 설명
 	           7. final 키워드 설명.
-			*/
-		
+		 */
+
 		// 사원 객체 생성 후 사원정보 출력 메소드 호출
-		
+		// 1. 사원 객체 생성 후 사원정보 출력 메소드 호출
+//		Employee emp1 = new Employee("권태정", "서울시 강남구", "010-1234-1234", "2020.01.01");
+//		emp1.dispEmpInfo();
+	
+
 		// 2. 정규직 사원 객체 생성 + 호출
-		Regular emp2 = new Regular("김도훈","서울시 당산동","","");
-		
+		/*
+		Regular emp2 = new Regular("김도훈", "서울시 당산동", "010-1272-2322", "2018.12.12", 3000000);
+		// System.out.printf("%,d원\n", emp2.getPay() ); // 3,000,000원
+		emp2.dispEmpInfo();  // 급여정보가 출력 X -> Regular 클래스에서 오버라이딩.
+		syso( emp2.getPay() );
+		*/
+
 		//emp.dispEmpInfo 제정의
+
+	// int i = (int)100L;
 		
-		
+		// [클래스들간의 형변환]
+		// 자동 업캐스팅(upcasting) : 자식객체 생성 -> 부모클래스에 참조
+		// Regular -> 자동 Employee 클래스 간에 형변환
+		Employee emp2 = new Regular("김도훈", "서울시 당산동", "010-1272-2322", "2018.12.12", 3000000);
+		emp2.dispEmpInfo(); // 오버라이딩 함수 호출
+		// emp2.getPay(); // 문제 : 호출 못함
+
 	} // main
 
 } // class

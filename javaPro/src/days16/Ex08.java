@@ -19,7 +19,7 @@ public class Ex08 {
 		int radius = 30;
 		Circle c = new Circle(center, radius);
 		//c.drawColorCenter();
-		c.draw(); // 재정의 함수(오버라이딩)
+		c.draw(); // 재정의 함수(오버라이딩) 호출
 		
 		System.out.println("=".repeat(50));
 		
@@ -37,6 +37,7 @@ public class Ex08 {
 
 } // class
 
+// 도형 클래스 선언
 // 모든 클래스의 최상위 부모클래스는 object이다. / 모든 클래스들이 공통적으로 멤버 가지고 있음. 
 class Shape extends java.lang.Object {
 	
@@ -103,14 +104,15 @@ class Circle extends Shape{
 	// point2D.dispPoint2D 	  Shape.draw();
 //	[1]
 //	public void drawColorCenter() {
-//		System.out.printf("[color=%s], center= ", color);
+//		System.out.printf("[color=%s], center : "
+//				+ "", color );
 //		center.dispPoint2D();
 //	}
 	
 	//[2] Shape 부모클래스의 color만 출력하는 draw() 메소드를 
 	// 물려받은 Circle 자식 클래스에서 color+원점을 출력하는
 	// 새로운 draw() 메소드를 다시 정의(재정의)
-	// 오버라이딩(override) == 부모로부터 물려받은 메소드를 재정의하는 것
+	// 오버라이딩(override) == 재정의 함수. 부모로부터 물려받은 메소드를 재정의하는 것
 	// 오버로딩(overload) 	== 중복함수
 	/*
 	 * [오버라이딩 규칙]
@@ -118,7 +120,7 @@ class Circle extends Shape{
 	 * 2. 리턴자료형도 동일하게
 	 * 3. 매개변수도 동일하게
 	 * 4. ***접근지정자는 같거나 범위가 넓은 접근지정자를 지정해야 된다. 
-	 * 	  public > proteceted > default(package) > private
+	 * 	  public > protected > default(package) > private
 	 * 5. 예외는 부모의 예외보다 많을 수 없다. (의미)
 	 * public void draw() throws IOException, ?, ? ,?? {
 		System.out.printf("[color=%s]\n", color);
@@ -136,11 +138,11 @@ class Circle extends Shape{
 // alt + shift + s
 	@Override
 	public void draw() throws IOException {
-		System.out.printf("[color=%s] 원점 (%d,%d)\n", color,this.center.getX(), this.center.getY());
-//		 this.center.getX();
-//		 this.center.getY();
-	
+		System.out.printf("[color=%s] 원점 (%d,%d)\n", color
+				, this.center.getX()
+				, this.center.getY());
 	}
+	
 	
 } // class
 
