@@ -20,7 +20,7 @@ public class Ex04_03 {
 		//Arrays.sort(s, Collections.reverseOrder()); T -> 타입. 클래스 타입
 		
 		//[2]
-//		StringCompartor s = new StringCompartor()
+//		StringCompartor c = new StringCompartor()
 		Arrays.sort(s, /*비교하고자 하는 잣대*/new StringCompartor());
 		System.out.println(Arrays.toString(s));
 
@@ -40,7 +40,6 @@ public class Ex04_03 {
 
 			@Override
 			public int compare(String o1, String o2) {
-				// TODO Auto-generated method stub
 				return -1 * o1.compareTo(o2);
 			}
 		});

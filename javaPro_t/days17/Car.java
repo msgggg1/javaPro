@@ -22,7 +22,7 @@ public class Car {
     Car(){    	
     }
     // 1 생성자
-    Car(Engine engine){  // 매개변수 다형성
+    public Car(Engine engine){  // 매개변수 다형성
     	this.engine = engine;
     }
 	// 메서드

@@ -55,9 +55,16 @@ public class Ex04_02 {
 			}
 		};
 		
+		// 예)
+//		ArrayList list = new ArrayList(new Collection() {
+//		}); 
+		
+		// 그러면 익명 클래스는 생성되고 나서 거의 바로 
+		// 가비지가 되는 건가요?
+		
+		System.out.println(" end ");
 		
 		
-	     
 	      
 
 	   } // main
@@ -65,24 +72,37 @@ public class Ex04_02 {
 	} // class
 
 
-	class Y_Engine implements Engine{
-	    int speed;
-	   
-	   @Override
-	   public void moreFuel(int fuel) {
-	      speed += fuel * 0.5;
-	   }
+/*
+class TempTwo extends Employee{
 
-	   @Override
-	   public void lessFuel(int fuel) {
-	      speed -= fuel * 0.5;
-	   }
-
-	   @Override
-	   public void stop() {
-	       speed = 0;
-	   }
-	   
+	@Override
+	public int getPay() {
+		return 0;
 	}
+	
+}
+*/
+
+class Y_Engine implements Engine{
+    int speed;
+	
+	@Override
+	public void moreFuel(int fuel) {
+		speed += fuel * 0.5;
+	}
+
+	@Override
+	public void lessFuel(int fuel) {
+		speed -= fuel * 0.5;
+	}
+
+	@Override
+	public void stop() {
+		 speed = 0;
+	}
+	
+}
+
+
 
 

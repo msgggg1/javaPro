@@ -22,12 +22,11 @@ public class Ex09_05 {
 		//	. 	상대경로 - 현재 디렉토리 (C:\Class\JavaClass\javaPro)
 		//	.. 	상대경로 - 상위 디렉토리
 		// 하위로 내려올땐 \\
-		//String fileName = ".\\.classpath";
-//		String fileName = dir + "\\.classpath";
-//		String fileName = ".\\src\\days01\\Ex01";
-//		String fileName = dir + "\\.classpath";
-//		String fileName = dir + "\\.classpath";
-//		String fileName = dir + "\\.classpath";
+//		String fileName = ".\\.classpath";
+        String fileName = dir + "\\.classpath";
+//		String fileName = ".\\src\\days01\\Ex01.java";		
+//		String fileName = ".classpath"; // 파일명
+//		String fileName = ".\\..\\Sample.java";
 		
 		
 		String fileName = ".\\src\\days17\\16일차복습_홍길동.txt";

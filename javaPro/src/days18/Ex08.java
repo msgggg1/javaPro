@@ -45,7 +45,7 @@ public class Ex08 {
 			// 강제 예외 발생시키겠다. : throw문 사용
 			//throw 발생시키고자하는 예외객체 
 			throw new IOException("점수범위 0~100");		  // 오류O checked
-			//throw new ArithmeticException("점수범위 0~100"); // 오류x unchecked
+//			throw new ArithmeticException("점수범위 0~100"); // 오류x unchecked
 		}
 		
 		return score;

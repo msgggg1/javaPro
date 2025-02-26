@@ -11,7 +11,7 @@ public class Ex05 {
 	public static void main(String[] args) {
 		/*
 		 * [예외처리(Exception Handling)]
-		 * 1. 오류(에러) : 프로그램 실행 중에 오작동 또는 비정상 종료되는 원인
+		 * 1. 오류 : 프로그램 실행 중에 오작동 또는 비정상 종료되는 원인
 		 * 2. 오류 발생 시점에 따라 
 		 * 	1) 컴파일 오류 -> 문법에 맞게
 		 * 		int a ;x -> 문법 에러(syntax)

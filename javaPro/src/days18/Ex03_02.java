@@ -1,5 +1,7 @@
 package days18;
 
+import days18.Ex03_02.StaticInner;
+
 /**
  * @author msg
  * @date 2025. 2. 26. - 오전 10:23:26
@@ -41,7 +43,10 @@ public class Ex03_02 {
 public static void main(String[] args) {
 	
 //		InstanceClass.COUNT;
+//		StaticInner.COUNT;
+//		StaticInner.cv;
 		
+	
 		
 	
 	} // main

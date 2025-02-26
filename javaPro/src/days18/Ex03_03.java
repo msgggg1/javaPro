@@ -38,6 +38,7 @@ public class Ex03_03 { // 외부클래스
 		// No enclosing instance of type Ex03_03 is accessible. Must qualify the allocation with an enclosing instance of type Ex03_03 (e.g. x.new A() where x is an instance of Ex03_03).
 //		InstanceInner ii = new InstanceInner(); 외부객체가 생성이 되어야 사용가능
 		StaticInner si = new StaticInner(); //O
+		
 		// 인스턴스 클래스를 static 메서드에서 사용하려면 외부 클래스 객체를 생성 후 사용 가능하다
 		Ex03_03 outer = new Ex03_03();
 		InstanceInner ii = outer.new InstanceInner();

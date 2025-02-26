@@ -17,10 +17,14 @@ public class Ex02 {
 	*/
 //		IC obj = new Ex00();
 //		obj.aaa();
+//		obj.bbb();
+//		obj.ccc();
 		
 		// 부모 인터페이스에도 업캐스팅 가능하다
 		IA obj = new Ex00(); 
-		obj.aaa(); // 애만 사용가능
+		obj.aaa(); // 에만 사용가능
+		// obj.bbb(); X
+		// obj.ccc(); X
 		
 	} // main
 
@@ -36,8 +40,7 @@ interface IB{
 
 // 인터페이스 끼리 상속할 때 extends
 interface IC extends IA, IB{
-	void aaa();
-	void bbb();
+//	void aaa();
 	void ccc();
 }
 
