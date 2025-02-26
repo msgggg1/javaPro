@@ -10,6 +10,8 @@ public class Student {
 
 	
 	//메소드
+	
+	
 	public String getInfo() {
 		
 		return String.format("[%d]\t%s\t%d\t%d\t%d\t%d\t%.2f\t%d\t%d\n"
@@ -19,6 +21,13 @@ public class Student {
 				, avg, rank, wrank);
 		
 	}// getInfo
+
+
+	@Override
+	public String toString() {
+		return "Student [year=" + year + ", no=" + no + ", name=" + name + ", kor=" + kor + ", eng=" + eng + ", mat="
+				+ mat + ", tot=" + tot + ", rank=" + rank + ", wrank=" + wrank + ", avg=" + avg + "]";
+	}
 	
 
 	

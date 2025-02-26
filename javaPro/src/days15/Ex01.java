@@ -107,7 +107,7 @@ public class Ex01 {
 			System.out.printf("[%d]반의 학생수 : %d명\n", i+1, cnts[i]);
 			// 그 반 학생정보 출력
 			for (int j = 0; j < cnts[i]; j++) {
-				System.out.print("\t"+students[i][j].getInfo());
+				System.out.print("\t"+students[i][j]);
 			} // for i
 		} // for j
 		System.out.println("end");
