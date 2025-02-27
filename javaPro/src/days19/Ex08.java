@@ -24,7 +24,6 @@ public class Ex08 {
 		//Arrays.sort(m);
 		//내림차순정렬
 		// int [] m => Integer [] 변환
-//		
 		IntStream is = Arrays.stream(m);
 		Integer [] n = is.boxed().toArray(Integer[]::new);
 		
@@ -34,7 +33,6 @@ public class Ex08 {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
 				return o1.compareTo(o2); //0
 			}
 		});*/

@@ -22,15 +22,19 @@ public class Ex07 {
 		int k = j ; // Auto Unboxing (래퍼클래스 -> 기본형 변환) 
 		
 		//[1]
-		/*int i = 100;
+		/*
+		int i = 100;
 		System.out.println(i);
+		
 		Integer j = new Integer(100);
+		Integer j = Integer.valueOf("100"); 
+		
+		// float f = j.floatValue();
 		//int k = j.intValue();
-		j = Integer.valueOf(100);
 		*/
 		
 //		int i = 100;
-		disp(k);
+		disp(1000);
 //		System.out.printf("출력형식", [Object...)]);
 		
 		// 래퍼클래스의 상속계층도 (기억)

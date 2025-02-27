@@ -49,7 +49,7 @@ public class Ex09 {
 			
 		} // if
 		
-		//System.out.println(p.toString()); 예외 발생
+//		System.out.println(p.toString()); //예외 발생
 		System.out.println(Objects.toString(p2, "NULL"));
 		
 	} // main

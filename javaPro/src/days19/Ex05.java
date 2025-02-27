@@ -19,8 +19,7 @@ public class Ex05 {
 		
 		// 1. 삽입
 //		int index = s.indexOf("Auto");
-//		int len = "Auto".length();
-//		
+//		int len = "Auto".length();	
 //		System.out.println(s.substring(0,index+len) +"[hi]"+s.substring(index+len));
 		
 		//2. String  s에서 "method" 문자열 찾아서 삭제
