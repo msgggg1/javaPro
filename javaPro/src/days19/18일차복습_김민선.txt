@@ -1,0 +1,53 @@
+1. 익명 클래스에 대해서 설명하세요 .
+	클래스 선언과 객체 생성을 동시에 하는 클래스로 일회용으로 사용된다.
+	형식: new 부모클래스or인터페이스(){
+		부모메서드 오버라이딩만 가능
+	} 
+
+2. 오류 (에러) 종류 및 설명하세요.
+	1) 종류
+		syntax오류
+		실행오류 
+			- 에러: 시스템적문제, 치명적 , 부모클래스, 자식클래스에러 존재
+			- 예외: 에러보다는 심하지 않은, 개발자가 처리할 수 있는 문제. 부모클래스, 자식클래스예외 존재
+		논리적오류
+
+3. 예외처리 2가지방법에 대해 설명하세요.
+	1) try ~ catch, try ~ catch ~ finally
+		: 에러발생이 예상되는 부분 try{}에 위치시킨다.
+		: 에러가 발생하면 즉시 catch부분으로 넘어감
+		: finally{}는 에러발생여부와 상관없이 무조건 실행됨.
+	
+	2) throws 문
+		: 예외처리를 상위 메소드로 넘긴다. 넘겨받은 메소드는 예외처리를 하거나, main까지 떠넘겨 처리를 안할 수 있다. 
+
+4. 다중 catch문, 멀티 catch 문에 대해서 설명하세요.
+	catch문을 여러개 사용하여 다수의 예외를 처리하는 것으로, 자식 exception부터 배치한다. 
+	멀티 : or 연산자
+	
+5. checked 예외, unchecked 예외에 대해서 설명하세요.
+	check : 컴파일러가 확인하는 예외로 RuntimeException 이외의 모든 예외가 해당(IOException..)
+	unchecked: 컴파일러가 확인하지 않는 예외로 RuntimeException과 그 자식객체 해당(Nullpointer, OutBound..)
+
+6. 학생명단.txt  파일을 읽어서 출력.
+  ( 
+   ㄱ. try~with~resources 문 사용
+   ㄴ. FileReader 만 사용 ( BufferedReader X )
+   ㄷ.  앞에 LineNumber 붙이기 
+  )
+
+// 미완성
+String fileName = C:\\Users\\user\\Documents\\카카오톡 받은 파일\\복습문제.txt;
+		int lineNumber = 1;
+		System.out.println(lineNumber);
+		int one ;
+		try(FileReader fileReader = new FileReader(fileName)){
+			
+			while ((one = fileReader.read())!= -1) {
+				if (one = "\n") {
+				System.out.printf("%d",lineNumber++);
+			} // if
+				System.out.printf("%s", (char)one);
+			} //  while
+			
+		}
