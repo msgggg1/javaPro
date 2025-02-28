@@ -1,0 +1,158 @@
+1. 1~10까지의 합을 출력하는 코딩을 하세요 ( for문 사용 )
+int sum = 0;
+	
+		for (int i = 1; i <= 10 ; i++) {
+			System.out.printf("%d+",i);
+			sum += i;
+		} // for i
+		System.out.printf("\b=%d\n",sum);
+
+
+2. 1~10까지의 합을 출력하는 코딩을 하세요 ( while문 사용 )
+int sum = 0;
+		int i = 1;
+		
+		while (i<=10) {
+			System.out.printf("%d+",i);
+			sum += i;
+			i++;
+		} //  while
+		System.out.printf("\b=%d\n",sum);
+
+3. 국어점수를 입력받아서 수우미양가 출력( if문 사용 )
+int kor;
+		char grade = '수';
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("국어점수?");
+		
+		if (!sc.hasNextInt()) {
+			System.out.println("다시");
+			
+			return;
+			
+		} // if
+				
+		kor = sc.nextInt();
+		if (0 <= kor && kor <= 100) {
+			
+			if (90<= kor && kor <= 100) {
+				grade = '수';
+				System.out.printf("%c",grade);
+			} // if
+			if (80<= kor && kor <= 90) {
+				grade = '우';
+				System.out.printf("%c",grade);
+			} // if
+			if (70<= kor && kor <= 80) {
+				grade = '미';
+				System.out.printf("%c",grade);
+			} // if
+			if (60<= kor && kor <= 70) {
+				grade = '양';
+				System.out.printf("%c",grade);
+			} // if
+			if (kor <= 60) {
+				grade = '가';
+				System.out.printf("%c",grade);
+			} // if
+				} else { System.out.println("다시");
+				}
+	
+	}
+
+}
+
+ 
+4. 국어점수를 입력받아서 수우미양가 출력( switch문 사용 )
+int kor;
+		char grade = '수';
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("국어점수?");
+		
+		if (!sc.hasNextInt()) {
+			System.out.println("다시");
+			
+			return;
+			
+		} // if
+				
+		kor = sc.nextInt();
+		
+		if (0 <= kor && kor <= 100) {
+			switch (kor/10) {
+		case 10:
+			grade = '수';
+			System.out.printf("%c",grade);
+			break;
+		case 9:
+			grade = '수';
+			System.out.printf("%c",grade);
+			break;
+		case 8:
+			grade = '우';
+			System.out.printf("%c",grade);
+			break;
+		case 7:
+			grade = '미';
+			System.out.printf("%c",grade);
+			break;
+		case 6:
+			grade = '양';
+			System.out.printf("%c",grade);
+			break;
+
+		default:
+			grade = '가';
+			System.out.printf("%c",grade);
+			break;
+		} // switch
+	
+			
+				} else { System.out.println("다시");
+				}
+	
+
+
+5. 로또 번호 6개를 출력하는 코딩을 하세요. 
+
+int lotto;
+		
+		for (int i = 1; i <= 6; i++) {
+			
+			lotto = (int)(Math.random()*47);
+			System.out.printf("[%d]",lotto);
+		} // for i
+
+6. 14 <=    <= 87 사이의 정수 3개 출력하는 코딩을 하세요 . 
+	for (int i = 1; i <= 3; i++) {
+			
+			int j = (int)(Math.random()*74 + 14);
+			System.out.printf("[%d]", j);
+			
+		} // for i
+ 
+7. 가위 바위보 게임  구현.
+
+Scanner scanner = new Scanner(System.in);
+		System.out.println("가위(1), 바위(2), 보(3)?");
+		
+			int user = scanner.nextInt();
+			int com = (int)(Math.random()*4); 
+		
+		switch (user - com) {
+		case 0:
+			System.out.println("무승부");
+			break;
+		case -1:
+			System.out.println("컴퓨터 승리");
+			break;
+		case 1:
+			System.out.println("사용자 승리");
+			break;
+			
+			
+		default:
+			break;
+		} // switch 

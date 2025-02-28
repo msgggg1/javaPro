@@ -1,0 +1,58 @@
+1. 각 제어문에 대해서 설명하세요. ( 선언 형식, 처리 과정 )
+  ㄱ. 제어문 정의 : 프로그램의 실행순서를 제어하는 문장(반복, 생략 등)
+  ㄴ. 종류   :  조건문, 분기문, 반복문, 조건반복문
+  	1) if / if else / if else if else
+	2) switch
+	3) for/foreach
+	4) while/do~while
+
+		break, continue
+  ㄷ. 제어문 종류별 처리 과정 설명
+	1) if : if(condition) -> 조건식(condition)을 만족하면 출력, if else: 조건식을 만족하지 않는 경우 else문 출력
+	2) switch: key 값에는 변수, 조건이 들어가고, 각 case value에 해당하는 값 출력, 그렇지 않은 경우 default값 출력. break문 없으면 빠져나가			지 못하고 계속해서 실행됨 
+	3) for : (a;b;c)에서 a를 먼저 실행하고, b조건을 확인한 후 참이면 c를 시행하고 그 과정을 반복함. 
+2. 아래 실행 결과를 보고 코딩하세요.
+	실행결과)
+   01 - 헬로우 월드  
+   02 - 헬로우 월드  
+   03 - 헬로우 월드  
+   04 - 헬로우 월드  
+   05 - 헬로우 월드  
+   06 - 헬로우 월드  
+   07 - 헬로우 월드  
+   08 - 헬로우 월드  
+   09 - 헬로우 월드  
+   10 - 헬로우 월드
+
+for (int i = 1; i < 11; i++) {
+	System.out.printf("%2d-헬로우월드\n",i);
+  }
+
+3. 배열의 정의 : 동일한 자료형 + 메모리상에 연속적으로 놓이게 한 것.
+3-2. 배열의 선언 형식
+	자료형 [] 배열명 = new 자료형 [배열크기]
+3-3. 배열의 크기
+	배열명.length
+3-4. 국어 점수를 3명 저장할 배열을 선언하고 각각  89, 34,66 입력 후 출력하는 코딩을하세요.
+
+public static void main(String[] args) {
+		int kor;
+		int [] kors = new int [3];
+		
+		kors[0]=89;
+		kors[1]=34;
+		kors[2]=66;
+		
+			for (int i = 0; i < 3; i++) {
+				System.out.println(kors[i]);
+			} // for i
+		
+		
+	}
+
+
+4. String n1 = "admin", n2 = "Admin"
+   위의 두 문자열을 비교하는 코딩을 하세요.
+
+String.equal 함수 사용
+ 

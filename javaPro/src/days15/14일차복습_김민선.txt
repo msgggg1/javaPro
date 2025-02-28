@@ -1,0 +1,159 @@
+1. 용어 정리
+  1) 객체 지향적 프로그래밍( OOP ) 
+	: Object Oriented Programming. 부품을 조립하여 컴퓨터를 만들듯이, 부품에 해당하는 객체를 조립하여 프로그래밍하는 것을 지향하는 것. 
+  2) 객체 : 클래스를 바탕으로 만들어진 유무형의 것        
+  3) 클래스 : 객체의 설계도
+  4) 인스턴스: 클래스를 바탕으로 new 연산자를 통해 메모리를 할당받아 사용가능한 상태에 있는 객체
+  5) 인스턴스화: new 연산자로 객체를 생성하는 과정
+  6) 객체의 구성요소: 필드(멤버변수, 특성, 속성), 메소드(멤버함수, 기능)
+  7) 멤버: 필드, 메소드  
+  8) 멤버변수: 객체의 특성, 속성이 객체 모델링을 통해 멤버변수가 된다. 필드라고도 함. 
+  9) 멤버함수: 객체의 기능이 객체 모델링을 통해 멤버함수가 된다. 메소드라고도 함. 
+  10) 필드: 객체의 특성, 속성으로, 인스턴스 변수와 클래스 변수가 있다. 
+  11) 메서드: 객체의 기능으로, 실제 일을 하는 부분
+  12) 변수:  변하는 값을 가짐
+      상수: 고정된 값을 가짐
+      리터럴: 0 A 등의 의미를 가짐          
+  13) 참조변수: 주소값을 참조함. 
+  
+2. 클래스의 특징( OOP의 특징 )에 대해서 설명하세요.
+	유지보수가 용이하고 재사용성을 높인다. 
+  
+3. 클래스의 설계 과정에 대해서 설명하세요. 
+	1) 객체의 특성(필드) 분석
+    	2) 클래스 선언
+	3) 클래스를 바탕으로 객체 생성
+	4) 객체 유지보수
+	5) 객체 수정, 확장, 유지보수
+4. NullPointerException 예외(에러)는 언제 발생하는 가 ? 
+     new 연산자를 통한 인스턴스화가 되지 않았을때
+
+5. 클래스의 선언 형식
+	[접근지정자] [기타제어자] class 클래스명 [extends     ][implements   ]{
+
+	// 필드
+	// 메서드
+}
+     
+6.   클래스 앞의 접근지정자의 종류에 대해서 설명하세요.   
+	1) public: 			패키지 내외부에서 사용가능
+	2) default(package)	패키지 내부에서 사용가능
+	-------- 중첩함수 내에서만 사용가능
+	3) protected		패키지 내부에서 사용가능 + 외부 상속가능
+	4) private			같은 파일 내에서만 사용가능
+6-2. 멤버 앞의 접근지정자의 종류에 대해서 설명하세요.
+	1) public: 			패키지 내외부에서 사용가능
+	2) default(package)	패키지 내부에서 사용가능
+	-------- 중첩함수 내에서만 사용가능
+	3) protected		패키지 내부에서 사용가능 + 외부 상속가능
+	4) private			같은 클래스 내에서만 사용가능
+   
+7. 클래스 선언할 때 기타제어자 종류에 대해서 설명하세요.
+	abstract
+	static
+	final	
+  
+8. 클래스(객체) 복사 / 클래스(객체) 복제에 대해서 설명하세요.  
+	복사: 복사하는 클래스의 주소값만을 참소
+	복제: 복사하는 클래스와 완전히 똑같은 값, 특성을 가짐. 새로운 주소값 생성
+ 
+9. 클래스(객체) 배열 에 대해서 설명하세요.  
+	자료형을 클래스로 가지는 배열이다.
+	class명 [] 배열명 = new class명 [배열크기] 로 선언한다. 
+
+10.  선언되는 위치를 기준으로 변수 구분하고, 생성시기, 소멸시기에 대해서 설명하세요. 
+			선언 위치			생성시기 			소멸시기	
+클래스 변수	클래스 안		프로그램 시작 시 	프로그램 종료 시
+인스턴스 변수	클래스 안		인스턴스 화된 이후 	주소값 연결이 끊어져 garbage -> 이후 소멸, 시기는 정확히 알 수 없음		
+지역 변수		메소드 안		선언문 지날 때		해당지역 벗어난 이후
+			-- 블록 안
+			생성자 안
+       
+11. 3 반의 30명의 학생의 성적 관리
+    Student 클래스를 선언 후 
+    클래스 배열을 사용해서 처리하세요
+    ( 입력, 성적 처리, 출력 )       
+////실행 안됩니다..
+
+		Student s = new Student();
+		Student [][] students = new Student [3][30];
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students[i].length; j++) {
+				students[i][j] = new Student();
+			} // for j
+		} // for i
+		
+		String name;
+		int kor, eng, mat, tot, rank, wrank, no, ban;
+		double avg;
+		
+		int [] cnt = new int [3];
+		char con = 'y';
+		
+		Scanner scanner = new Scanner(System.in);
+
+		do {
+			System.out.printf("반 입력?");
+			ban = scanner.nextInt();
+			
+			System.out.printf("[%d번] 학생 이름, 국어, 영어 수학 입력?", cnt[ban-1]+1);
+			name = getName();
+			kor = getScore();
+			eng = getScore();
+			mat = getScore();
+			
+			tot = kor + eng + mat ;
+			avg = (double)tot/3;
+			rank = 1;
+			wrank = 1;
+			
+			students[ban-1][cnt[ban-1]].no = cnt[ban-1]+1 ;
+			students[ban-1][cnt[ban-1]].avg = avg;
+			students[ban-1][cnt[ban-1]].eng = eng;
+			students[ban-1][cnt[ban-1]].kor = kor;
+			students[ban-1][cnt[ban-1]].mat = mat;
+			students[ban-1][cnt[ban-1]].name = name;
+			students[ban-1][cnt[ban-1]].rank = rank;
+			students[ban-1][cnt[ban-1]].tot = tot;
+			students[ban-1][cnt[ban-1]].wrank = wrank;
+			
+			students[ban-1][cnt[ban-1]]=s;
+			
+			cnt[ban-1]++;
+			
+			System.out.println(">학생 입력 계속?");
+			con = (char)System.in.read();
+			System.in.skip(System.in.available()); // 13 10
+			
+		} while (Character.toUpperCase(con)=='Y');
+		
+		
+		for (int i = 0; i < students.length; i++) {
+			for (int j = 0; j < students[i].length; j++) {
+				students[i][j].wrank=students[i][j].rank = 1;				
+				for (int i2 = 0; i2 < students.length; i2++) {
+					for (int j2 = 0; j2 < students[i2].length; j2++) {						
+						if(students[i][j].tot <students[i2][j2].tot) {
+							students[i][j].wrank++;
+							if (i == i2) {
+								students[i][j].rank ++;
+							} // if
+						} // 
+					} // for j
+				} // for i
+				
+			} // for j
+		} // for i
+		
+		for (int i = 0; i < ban; i++) {
+			for (int j = 0; j < cnt[ban-1]; j++) {
+				System.out.println(students[i][j].getInfo());
+			} // for j
+		} // for i
+
+	} // main
+
+
+
+
+

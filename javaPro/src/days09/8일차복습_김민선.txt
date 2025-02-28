@@ -1,0 +1,59 @@
+1. 년도를 매개변수로 받아서 윤년, 평년을 boolean 형으로 반환하는 메서드만 선언하세요
+ (  치윤법 사용 ) 
+	private static int isLeapYear(int year) {
+
+		return (year/4) - (year/100) + (year/400);
+
+
+2. 1 ~ n 까지의 합을 구해서 반환하는   [재귀함수]를 선언하세요. 
+
+	private static int recursiveSum(int i) {
+		if (i == 1) return 1; 
+		else 		return i + recursiveSum(i-1);
+	}
+
+ 
+3. 로또 중복체크는 하는 isDuplicateLotto 함수를 선언하세요. ( 조건 잘 보세요 )
+     ( 조건 : 중복되면 true를 반환,  중복되지 않으면 false 반환)
+
+	private static boolean isDuplicateLotto() {
+		boolean flag = false;
+			for (int i = 0; i < index; i++) 
+				if (lotto[i] == n) flag = true	
+	}
+
+4. 오버로딩( Overloading) 에 대해서 설명하세요 . 
+동일한 이름을 가진 함수에 매개변수 종류, 개수를 다르게 하여 함수를 정의하는 것(중복함수)
+리턴자료값은 다르게 해도 오버로딩 할 수 없음
+
+5. ┌      10개 항의 합     ┐을 아래와 같이 출력하는 코딩을 하세요.    
+   1+2+4+7+11+16+22+29+...=???      
+
+		int sum = 0;
+		int inc = 1;
+		int term = 1;
+	
+		for (int i = 1; i <= 10; i ++) {
+			System.out.printf("%d+", term);
+			sum += term;
+			term += inc;
+			inc++;
+		} // for i
+		
+		System.out.printf("=%d\n",sum);
+
+6. 1~100 까지의 소수의 합
+   2+3+5+7+...97=???    
+
+		int sum = 0;
+		
+		for (int i = 1; i <= 100; i++) {
+			if(for (int j = 2; j < i/2; j++) {
+				boolean flag = true;
+				if(i/j == 0) flag = false;
+			} // for j) 
+		    System.out.printf("%d",i);
+		    sum += i;
+		} // for i
+	System.out.printf("=%d",sum);
+   
