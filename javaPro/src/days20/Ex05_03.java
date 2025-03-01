@@ -17,21 +17,20 @@ public class Ex05_03 {
 		String pattern = "홍길동";
 		
 		StringBuffer sb = new StringBuffer();
-		
+
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(source);
 		
-		System.out.println(source);
 		int cnt = 0;
 		while (m.find()) {
-			cnt ++;
-			System.out.printf("start: %d~ end: %d\n", m.start(), m.end());
+			cnt++;
+			System.out.printf("index:%d~%d\n", m.start(), m.end());
 			if (cnt == 2) m.appendReplacement(sb, "김민선");
-			m.app
-		} //  while
-//			m.appendTail(sb);
+		}
+		m.appendTail(sb);	
 			
-			System.out.println(sb.toString());
+		System.out.println(sb.toString());
+		
 
 	} // main
 

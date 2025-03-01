@@ -10,60 +10,44 @@ public class Ex01 {
 		// 1. days19.Ex10.java 참고 
 //		 알파벳 대, 소문자, 숫자의  A(20), B(11)~ Z(3)
 //		 갯수를 파악해서 #으로 막대그래프를 그리기.
-//		  실행결과)
-//			 A(20) : ####################
-//			 B(11) : ###########
-//			 :
-//			 Z(3)  : ###	  
-//			 a(20) : ####################
-//			 b(11) : ###########
-//			 :
-//			 z(3)  : ###
-//			 0(20) : ####################
-//			 1(11) : ###########
-//			 :
-//			 9(3)  : ### 	
-		
-		//// 0 9  A 	Z(90)  a(97)
-		//// 0 9 10		35     36
-		
+
 		String fileName = ".\\src\\days18\\Ex10.java";
-			
-		char one = '\u0000';
-		int code = -1;
-		int [] countsUpper = new int[26];
-		int [] countsLower = new int[26]; //소문자
-		int [] countsDigit = new int[10]; // 숫자
+		
+		int one ;
+		int [] upper = new int [26];
+		int [] lower = new int [26];
+		int [] digit = new int [10];
+		
 		
 		try (FileReader reader = new FileReader(fileName);){
 			
-			while ( (code = reader.read()) != -1 ) {
-				
-				if ( Character.isUpperCase(code) ) {
-					int index = code -'A';
-					countsUpper[index]++;
-				} else if (Character.isLowerCase(code)) {
-					int index = code -'a';
-				} else if (Character.isDigit(code)) {
-					int index = code -'0';
-				} // if
-			} // while
+			while ((one = reader.read()) != -1) {
+				if (Character.isDigit(one)) digit[one-'0']++; 
+				else if(Character.isUpperCase(one)) upper[one-'A']++;
+				else if(Character.isLowerCase(one))	lower[one-'a']++;
+			} // if
 			
-			// 막대그래프 그리기
-			for (int i = 0, count; i < counts.length; i++) {
-				count  = counts[i];
-				System.out.printf("%c(%d) %s\n", 
-						i+'A', count, "#".repeat(count));
-			} // for i
+			for (int i = 0; i < digit.length; i++) {
+				System.out.printf("%c(%d)\t: %s\n", i+'0', digit[i], "#".repeat(digit[i]));
+			} //for
+			for (int i = 0; i < upper.length; i++) {
+				System.out.printf("%c(%d)\t: %s\n", i+'A', upper[i], "#".repeat(upper[i]));
+			} //for
+			for (int i = 0; i < lower.length; i++) {
+				System.out.printf("%c(%d)\t: %s\n", i+'a', lower[i], "#".repeat(lower[i]));
+			} //for
 			
-		} catch (Exception e) {
-			System.out.println(e.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 		
 		
-		/*
+	
+		/* 내 풀이
 		int one;
-		int [] counts = new int[63];
+		int [] counts = new int[62];
 		
 		String fileName = ".\\src\\days18\\Ex10.java";
 		
@@ -71,22 +55,22 @@ public class Ex01 {
 			
 			while ((one = reader.read()) != -1) {
 				if (Character.isAlphabetic(one)) {
-					if (Character.isUpperCase(one)) counts[one - 55]++;
-					else counts[one - 61]++;		
+					if (Character.isUpperCase(one)) counts[one - 'A' + 10]++; //0~9 /10~35/ 36~61
+					else if(Character.isLowerCase(one)) counts[one - 'a' + 36 ]++;		// 
 				} // if
 	
 				if (Character.isDigit(one)) {
-					counts[one]++;
+					counts[one -'0']++;
 				} // if
 			} //  while
 			
 			for (int j = 0; j <counts.length; j++) {
 				if (j<=9) {
-					System.out.printf("%c(%d)\t: %s", (char)j, counts[j], "#".repeat(counts[j]) );									
+					System.out.printf("%c(%d)\t: %s\n", (char)(j+'0'), counts[j], "#".repeat(counts[j]) );									
 				} else if(j<=35){
-					System.out.printf("%c(%d)\t: %s", (char)(j+55), counts[j], "#".repeat(counts[j]) );
+					System.out.printf("%c(%d)\t: %s\n", (char)(j+'A' - 10), counts[j], "#".repeat(counts[j]) );
 				} else {
-					System.out.printf("%c(%d)\t: %s", (char)(j+61), counts[j], "#".repeat(counts[j]) );
+					System.out.printf("%c(%d)\t: %s\n", (char)(j+'a'-36), counts[j], "#".repeat(counts[j]) );
 				}
 			} // for j
 			
@@ -94,6 +78,7 @@ public class Ex01 {
 			e.printStackTrace();
 		}
 		*/
+		
 		
 		
 

@@ -34,7 +34,7 @@ public class Ex03 {
 			
 			// 2차원 배열 채우기
 			int cols = students[0].length; //6
-			int n = 0; // 읽어온 학생 수 
+			int n = 0; // 읽어온 학생 수 1,2,3,4,5 ...
 			while ( (name = br.readLine()) != null  ) {
 				// students 2차원 배열 채우기
 				students[n/cols][n%cols] = name;
@@ -42,16 +42,16 @@ public class Ex03 {
 			} // while
 			
 			
-			// 파일에 쓰기(저장)
+			// SiSt22Class5.html 파일에 쓰기(저장)
 			writer.write("<html>");
 			writer.write("<head>");			
 			writer.write("</head>");
 			writer.write("<body>");
 			writer.write("<h3>(주)쌍용교육센터 5강의실 학생 명단</h3>");
-			writer.write("<ol>");
 			
 			for (int i = 0; i < students.length; i++) {
 				writer.write("<h3>"+(i+1)+"조</h3>");
+				writer.write("<ol>");
 				for (int j = 0; j < students[i].length; j++) {
 					name = students[i][j];
 		               String li = String.format("<li>%s</li>\n", name);
