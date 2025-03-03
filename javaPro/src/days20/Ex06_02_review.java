@@ -20,6 +20,13 @@ public class Ex06_02_review {
 		Date d = new Date(year-1900, month-1, 1);
 		System.out.println(d);
 		
+		//[3] year, month, 마지막 날짜?
+		System.out.println(d.getDate());
+		d.setMonth(d.getMonth()+1);
+		d.setDate(d.getDate()-1);
+		System.out.println(d);
+		System.out.println(d.getDay());
+		
 
 	} // main
 

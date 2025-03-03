@@ -17,6 +17,7 @@ public class Ex09 {
 		//[3] ***
 		Date d = c.getTime();
 //		[1] Date d = new Date(0, 0, 0, 0, 0, 0)
+//		Date d = new Date(c.get(Calendar.YEAR)-1900, c.get(Calendar.MONTH), c.get(Calendar.DATE));
 //		[2] Date d = new Date(long time);
 		
 		

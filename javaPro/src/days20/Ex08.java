@@ -17,8 +17,6 @@ public class Ex08 {
 
 	public static void main(String[] args) {
 		
-		// 오늘 날짜 대괄호 추가 
-		
 		Scanner scanner = new Scanner(System.in);
 		int year, month;
 
@@ -37,7 +35,6 @@ public class Ex08 {
 		System.out.printf("\t\t\t[%d년 %d월]\n", year, month);
 		Graphic2D.drawLine(68,"-");
 		String week = "일월화수목금토";
-		
 		for (int i = 0; i < week.length(); i++) {
 			System.out.printf("\t%c", week.charAt(i));
 		} // for i
@@ -51,15 +48,13 @@ public class Ex08 {
 //			 System.out.printf( "\t%d", date);
 	         System.out.printf( isToday(startDate) ? "\t[%d]": "\t%d", date);
 	          if( i % 7 == 6) System.out.println();
-
-			startDate.add(Calendar.DATE, 1);
+	          startDate.add(Calendar.DATE, 1);
 		} // for i
 		
 		 System.out.println(); // 개행
-	      Graphic2D.drawLine(60, "-");
+	     Graphic2D.drawLine(60, "-");
 	   }
 
-	}
 
 	private static Calendar getStartDate(int year, int month) {
 		//2025 2
@@ -70,16 +65,11 @@ public class Ex08 {
 		return c;
 	}
 
-//	public static boolean isToday(Calendar c) {
-//	      Calendar today = Calendar.getInstance(); // 절삭     
-//	      today.set(today.get(Calendar.YEAR), 0, 0, 0, 0, 0);
-//	      return today.equals(c);
-//	   }
-	
 	public static boolean isToday(Calendar c) {
-	      Calendar today = Calendar.getInstance(); // 절삭   
-	      today = new GregorianCalendar(today.get(1), today.get(2), today.get(5));
-	      return today.equals(c);
-	   }
+		Calendar today = Calendar.getInstance(); // 절삭	
+		today = new GregorianCalendar(today.get(1), today.get(2), today.get(5));
+		return today.equals(c);
+	}
+	
 	
 } // class

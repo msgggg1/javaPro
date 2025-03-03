@@ -18,26 +18,30 @@ public class Ex07_02 {
 				
 		// 1) 2025.3.1 	무슨 요일?
 		Calendar c = Calendar.getInstance();
+		/* [1]
 		c.set(Calendar.YEAR, year);
-		
-		//[1]
-		//[2]
-		c.set(year, month-1, 1);
+		c.set(Calendar.MONTH, month -1 );
+		c.set(Calendar.DATE, 1 );
+		*/
+		// [2]
+		/*
+		c.set(year, month -1 , 1);
+		*/
+		// [3]
+		c = new GregorianCalendar(year, month-1, 1);
 		
 		int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-		System.out.println(Ex07.getCalendar(c));
-		System.out.println("0일월화수목금토".charAt(dayOfWeek));
 		
-		//[3]
-		c = new GregorianCalendar(year, month -1, 1);
+		System.out.println( Ex07.getCalendar(c) );
+		System.out.println( "0일월화수목금토".charAt(dayOfWeek) );
 		
-		
-		// 2) 2025.3 	마지막 날짜?
+		//2) 2025.3 마지막 날짜
+		//[1]
 		// ㄱ. 2025.3.1 + 1달
 //		c.set(Calendar.MONTH, c.get(Calendar.MONTH)+1);
 //		c.add(Calendar.MONTH, 1);
 		// ㄴ. 1일 빼자
-//		c.set(Calendar.DATE, c.get(Calendar.DATE));
+//		c.set(Calendar.DATE, c.get(Calendar.DATE)-1);
 //		c.add(Calendar.DATE, -1);
 		// ㄷ. 일(date) 가져오기 
 		

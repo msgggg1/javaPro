@@ -12,7 +12,7 @@ import java.text.ParseException;
 public class Ex10_02 {
 
 	public static void main(String[] args) {
-//		String strMoney = "3,257,600";
+//		String strMoney = "₩3,257,600";
 
 		
 		//[1]
@@ -20,7 +20,7 @@ public class Ex10_02 {
 //		System.out.println(money);
 
 		//[2] DecimalFormat 형식화 클래스
-		String strMoney = "3,257,600.00";		
+		String strMoney = "₩3,257,600.00";		
 		String pattern = "\u00A4#,###.00";
 		DecimalFormat df = new DecimalFormat(pattern);
 		try {
@@ -31,8 +31,8 @@ public class Ex10_02 {
 			e.printStackTrace();
 		}
 		
-		// 숫자 -> 형식화된 문자열 변환 : df.format 메서드
-		// 형식화된 문자열 -> 숫자 변환 : df.parse 메서드
+		// 숫자 -> 형식화된 문자열 변환 : df.format() 메서드
+		// 형식화된 문자열 -> 숫자 변환 : df.parse() 메서드
 		
 	} // main
 

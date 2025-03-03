@@ -11,7 +11,7 @@ import java.util.Date;
 public class Ex06_02 {
 
 	public static void main(String[] args) {
-		// 달력 그리기
+		// 달력 그리기 - Date 클래스
 		int year = 2025;
 		int month = 3;
 		
@@ -36,7 +36,7 @@ public class Ex06_02 {
 //		int date = d.getDate();
 //		d.setDate(date+1);
 		
-		//[4] 1달 더하기
+		//1달 더하기
 		d.setMonth(d.getMonth() +1);
 		//1일 빼기
 		d.setDate(d.getDate()-1);

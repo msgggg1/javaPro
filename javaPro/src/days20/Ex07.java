@@ -18,10 +18,14 @@ public class Ex07 {
 		//System.out.println(c);
 		System.out.println(c.get(1));// year
 		System.out.println(c.get(Calendar.YEAR));// year
-		
-		System.out.println(c.get(Calendar.DAY_OF_YEAR));
+		System.out.println( c.get( Calendar.MONTH ) + 1 ); // month
+		System.out.println( c.get( Calendar.DATE ) ); // date
+		System.out.println( c.get( Calendar.DAY_OF_MONTH ) ); // date
+		//
+		System.out.println(c.get(Calendar.DAY_OF_YEAR));//date
 		
 		// 시간, 분, 초 , 밀리초
+		System.out.println( c.get( Calendar.HOUR) );
 		System.out.println(c.get(Calendar.HOUR_OF_DAY));
 		System.out.println(c.get(Calendar.MINUTE));
 		System.out.println(c.get(Calendar.SECOND));
@@ -36,7 +40,7 @@ public class Ex07 {
 	
 	public static String getCalendar(Calendar c) {
 		return String.format("%d.%02d.%02d"
-				,c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+				,c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH));
 	}
 
 } // class

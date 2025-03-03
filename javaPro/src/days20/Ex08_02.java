@@ -7,11 +7,21 @@ public class Ex08_02 {
 	public static void main(String[] args) {
 		
 		Calendar today = Calendar.getInstance();
-		System.out.println(Ex07.getCalendar(today));
-		Calendar startDate = new GregorianCalendar(2025 ,1-1,28);
-		System.out.println(Ex07.getCalendar(startDate));
+		// Calendar today = new GregorianCalendar(2025, 2-1, 28, 0 , 0, 0);		 
+		// 2025.02.28
+		today = new GregorianCalendar(today.get(1), today.get(2), today.get(5));
 		
-		System.out.println(today.after(startDate));
+		System.out.println( Ex07.getCalendar(today) );
+		Calendar startDate = new GregorianCalendar(2025, 2-1, 28);
+		System.out.println( Ex07.getCalendar(startDate) );
+		
+		 
+		System.out.println( today.after(startDate) );
+		System.out.println( today.before(startDate) );
+		System.out.println( today.equals(startDate) );
+		
+		System.out.println( today.compareTo(startDate) );
+	 
 		
 	} // main
 	
