@@ -1,50 +1,29 @@
-package days14;
+package days22;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
+import days14.Student;
+
 /**
  * @author msg
- * @date 2025. 2. 20. - 오후 5:07:38
+ * @date 2025. 3. 5. - 오전 10:45:23
  * @subject
- * @content 한 반 30명의 성적관리
- * 			(이름, 국어, 영어, 수학, 총점, 평균, 등수)
- * 			1. 입력 정보 - 이름, 국어, 영어, 수학
- * 			2. 총점, 평균, 등수 계산 처리
- * 			3. 모든 학생 정보 출력
- * 
+ * @content
  */
-
-public class Ex12 {
+public class Ex03 {
 
 	public static void main(String[] args) throws IOException {
-		// 클래스(객체) 배열
-				// 객체 배열안에 객체배열이 있다면 어떤 모양인지 궁금합니다
-				//Person[] pArr = new Person[3];
-				// [0x200][null][null]                      [0x100]
-				//  pArr[0]   pArr[2]                         pArr
-				// 0x100
-				
-				// pArr[0] = new Person();
-				// [name][age][0x500][][]
-				// 0x200
-				
-				// [][][][][][][][][][][]
-				// 0x500		
-				
-				//                        [work()][run()]
-				
-		
+		// [배열] 사용 -> 단점 : 공간 늘려야함 -> ArrayList 사용.
 		String name;
 		int kor, eng, mat, tot, rank;
 		double avg;
 		
 		final int STUDENT_COUNT = 30;
-		
-		// 클래스 배열 선언
-		Student [] students = new Student [STUDENT_COUNT];
+		ArrayList list = new ArrayList(STUDENT_COUNT); //초기용량 30
 		
 		int cnt = 0; // 입력받은 학생 수 저장할 변수
 		char con = 'y';
@@ -61,8 +40,8 @@ public class Ex12 {
 			
 			tot = kor + eng + mat ;
 			avg = (double)tot/3;
-			rank = 1;// rank 계 속 바뀜 -> 마지막에 처리
-			// 각 배열에 요소로 추가. (각 배열의 index ==> cnt 처리)
+			rank = 1;
+	
 			Student s = new Student();
 			s.no = cnt +1 ;
 			s.name = name;
@@ -73,32 +52,48 @@ public class Ex12 {
 			s.avg = avg;
 			s.rank = 1;
 			
-			students[cnt]=s;
+			list.add(s);
 			
 			// 입력받은 학생 수 1증가
-			cnt++;
+			//cnt++;
+			// -> size
+			
 			// 입력 계속 여부 체크
 			System.out.println(">학생 입력 계속?");
 			con = (char)System.in.read();
 			System.in.skip(System.in.available()); // 13 10
-			
 		} while (Character.toUpperCase(con)=='Y');
 		
-		// 등수 처리
-		// tot 비교
-		for (int i = 0; i < cnt; i++) {
-			for (int j = 0; j < cnt; j++) {
-				if (students[i].tot < students[j].tot) students[i].rank ++ ;		
-			} // if		
-		} // for i
-		for (int i = 0; i <cnt; i++) {
-				System.out.println(students[i].getInfo());
-		} // for i
-
+		cnt = list.size();
+		//등수 처리
+		procRank(list);
+		//출력
+		dispStudent(list);
+		
 		
 	} // main
 
+	private static void dispStudent(ArrayList list) {
+		System.out.printf("입력받은 학생수: %d명\n", list.size());
+		Iterator ir = list.iterator();
+		while (ir.hasNext()) {
+			Student s = (Student) ir.next();
+			System.out.println(s);
+		}
+	}
 
+	private static void procRank(ArrayList list) {
+	      for (int i = 0; i < list.size(); i++) {
+	         Student s = (Student) list.get(i);
+	         s.rank = 1;
+	         for (int j = 0; j < list.size(); j++) {
+	            Student t = (Student) list.get(j);
+	            if (s.tot < t.tot) {
+	               s.rank++;
+	            } // if
+	         } // for j
+	      } // for i
+	   }
 
 	public static String getName() {
 	      // '가' ~ '힣'
@@ -125,5 +120,6 @@ public class Ex12 {
 	   public static int getScore() {
 	      return  (int)( Math.random()*101 ) ;
 	   }
+	
 	
 } // class

@@ -1,0 +1,85 @@
+1.   현재 날짜와 시간 정보를   LocalDateTime 클래스를 사용해서 
+     아래와 같은 형식으로 출력하세요 .     
+     출력 형식 ) 2023/02/28 화요일   12:17:57.356  
+
+LocalDateTime dt = LocalDateTime.now();
+		String pattern = "yyyy/MM/dd E요일   hh:mm:ss.SSS";
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
+		String time = dtf.format(dt);
+		System.out.println(time);
+-----------------------------------------------------------------------------------
+
+2.  String s = "2023.02.28 (화)" 문자열을 LocalDate 클래스로 변환시키세요. 
+
+String s = "2023.02.28 (화)";
+		String pattern = "yyyy.MM.dd (E)";
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
+		LocalDate d = LocalDate.parse(s, dtf);
+		System.out.println(d);
+----------------------------------------------------------------------------------
+
+3. 용어 정리
+  1) 프레임워크( framework ) 정의에 대해서 설명하세요. 
+	표준화된 체계, 틀로 작업을 용이하게 해줌
+  2) 컬렉션 프레임워크 정의에 대해서 설명하세요.
+	데이터와 관련된 프레임 워크 
+  3) 컬렉션 프레임워크의 핵심 인터페이스( 3가지 타입 ) 에 대해서 설명하세요. 
+	collection
+     		↑
+arrayList 		Set			Map  
+순서유지O           X			key+value = entry로 이루어짐
+중복 가능  		 X			key 중복X, value 중복O
+----------------------------------------------------------------------------------
+
+4. ArrayList 컬렉션 클래스를 사용하여 
+  1) 팀원들 이름을 요소로 추가하기
+     (팀원들은 같은 옆 자리의 교육생) 
+  2) 반복자(iteratror)를 사용해서 모든 요소 출력하기      ***
+  3) 팀원 한명을 검색해서 있다면 "홍길동"으로 수정하기
+  4) "홍길동"을 검색해서 있다면 삭제하기. 
+
+		ArrayList team = new ArrayList();
+//		  1) 팀원들 이름을 요소로 추가하기
+		team.add("김민선");
+		team.add("최승호");
+		team.add("최인석");
+//		  2) 반복자(iteratror)를 사용해서 모든 요소 출력하기      ***
+		Iterator ir = team.iterator();
+		while (ir.hasNext()) {
+			String member = (String) ir.next();
+			System.out.println(member);
+		} 
+//		  3) 팀원 한명을 검색해서 있다면 "홍길동"으로 수정하기
+		if (team.contains("최승호")) {
+			team.set(team.indexOf("최승호"), "홍길동");
+		} // if
+		 
+//		  4) "홍길동"을 검색해서 있다면 삭제하기. 
+		while (team.remove("홍길동")) ;
+		System.out.println(team);
+------------------------------------------------------------------------------
+    
+5.  java.time 패키지 클래스 사용. ( LocalDateTime 사용)
+    1) 설문 시작일 25.1.15  09:00:00
+    2) 설문 종료일 25.3.05  09:00:00
+   오늘 현재 설문 가능한여부를 출력하세요. 
+  
+		LocalDateTime startDate = LocalDateTime.of(2025, 1, 15, 9, 0, 0);
+		LocalDateTime endDate = LocalDateTime.of(2025, 3, 5, 9, 0, 0);
+		LocalDateTime now = LocalDateTime.now();
+		
+		if (now.isAfter(startDate)&& now.isBefore(endDate)||now.isEqual(startDate)) {
+			System.out.println("설문가능합니다.");
+		} else System.out.println("종료된 설문입니다.");
+
+-------------------------------------------------------------------------------
+
+6. 이름, 나이 필드를 가진 Person 클래스를 선언하고
+   ArrayList 컬렉션 클래스에  Person 객체를 요소로 추가하고 
+   이름으로 오름차순 정렬해서    출력하는 코딩을 하세요 .. 
+
+
+
+
+
+  

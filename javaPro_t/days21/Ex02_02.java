@@ -1,5 +1,6 @@
 package days21;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,20 +18,29 @@ public class Ex02_02 {
 		String name;
 		int age;
 		boolean gender;
+		
+		String [] sArr = s.split(",");
+		System.out.println(Arrays.toString(sArr));
+		for (int i = 0; i < sArr.length; i++) {
+			System.out.println(sArr[i].split(":")[1]);
+		} // for i
+		
+		
+//		String regex = ",?\\s*.{2}:";
+//		String [] sArr = s.split(regex);
+//		System.out.println(Arrays.toString(sArr));
+//		
+//		name = sArr[1];
+//		age = Integer.parseInt(sArr[2].replace("살", ""));
+//		gender = sArr[3].equals("남자")? true : false ; 
+//		
+//		System.out.println(name);
+//		System.out.println(age);
+//		System.out.println(gender);
+		
+		
+		
 
-		/* [3]
-		String regex = ",?\\s*[ㄱ-힣]*:";
-
-		String[] info = s.split(regex);
-
-		name = info[1];
-		age = Integer.parseInt(info[2].replace("살",""));
-		gender = info[3].equals("남자")?true:false;
-
-		System.out.println(name);
-		System.out.println(age);
-		System.out.println(gender);
-		*/
 
 		/* [2]
 		String [] sArr = s.split(", ");

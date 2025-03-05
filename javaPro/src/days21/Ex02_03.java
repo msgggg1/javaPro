@@ -26,7 +26,7 @@ public class Ex02_03 {
 		Matcher m = p.matcher(s);
 
 		//m.matches() -> t/f
-		//		// m.find() -> t/f
+		// m.find() -> t/f
 		if ( m.find() ) {
 			name =  m.group(1);
 			age = Integer.parseInt(m.group(2)); 
