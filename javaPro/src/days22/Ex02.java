@@ -28,6 +28,10 @@ public class Ex02 {
 		team3.add("박지웅");
 		team3.add("안준호");
 		
+		System.out.println( team1 );
+		System.out.println( team2 );
+		System.out.println( team3 );
+		
 		ArrayList class5 = new ArrayList(team1);
 		class5.addAll(team2);
 		class5.addAll(team3);

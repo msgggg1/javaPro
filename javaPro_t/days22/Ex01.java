@@ -28,7 +28,9 @@ public class Ex01 {
 		
 		System.out.println( list );
 		
-		/* [1]
+		/* [3] 이름 역순으로 정렬 */
+		/* [1] 나이 순으로 정렬 */
+		//        익명클래스
 		list.sort( new Comparator<Person>() {
 			@Override
 			public int compare(Person o1, Person o2) {				
@@ -36,10 +38,10 @@ public class Ex01 {
 				// return o1.age -  o2.age;
 			}
 		} );
-		*/
 		
-		// [2]
-		list.sort(null);
+		
+		// [2] Person 기본 정렬 기능 : 오름차순 정렬
+		// list.sort(null);
 		
 		System.out.println( list );
 		
@@ -138,6 +140,7 @@ class Person implements Comparable<Person>{
 		return "Person [name=" + name + ", age=" + age + "]";
 	}
 
+	// 기본 정렬 구현
 	@Override
 	public int compareTo(Person o) {
 		return this.name.compareTo(o.name);

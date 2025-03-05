@@ -46,9 +46,9 @@ public class Ex05 {
 		
 		// 첫번째 요소 얻어오기
 		System.out.println(v.get(0));
+		System.out.println( v.elementAt(0) );  
 		// v.elementAt(0) 위와 같음. / 차이점: 동기화 처리
 		
-		//arrayList에 안보이던 메소드
 		// 열거자
 		Enumeration en = v.elements();
 		while (en.hasMoreElements()) { // [true]/false 요소를 더 가지고 있냐
@@ -60,7 +60,7 @@ public class Ex05 {
 		// 반복자: 반복적으로 요소를 처리 중에 요소가 수정, 삭제, 추가 -> 예외 발생 시킴
 		// 열거자:												수정 전 그대로 읽어옴. 오류 X. (복사해서 읽음)
 		
-		v.remove(0); //removelment
+		v.remove(0); //removelement
 		
 		// 첫번째 요소 반환
 		v.firstElement();

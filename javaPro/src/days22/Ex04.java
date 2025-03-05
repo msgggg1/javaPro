@@ -8,7 +8,7 @@ import java.util.List;
  * @author msg
  * @date 2025. 3. 5. - 오전 11:16:52
  * @subject String [] -> ArrayList 변환
- * @content 		<-
+ * @content ArrayList -> String[] 변환		
  */
 public class Ex04 {
 
@@ -35,9 +35,9 @@ public class Ex04 {
 		//[1]
 //		String [] sArr = new String[list2.size()];
 //		for (int i = 0; i < list2.size; i++) {
-//			
+//			sArr[i] = (String) list2.get(i);
 //		} // for i
-		
+//		System.out.println( Arrays.toString(sArr) );
 		//[2]
 		/*
 		Object [] oArr = list2.toArray();
@@ -47,20 +47,13 @@ public class Ex04 {
 		}
 		*/
 		
-		//[3]
+		//[3] Object[] -> String[] 변환
 		//String [] sArr = (String[]) list2.toArray(); -> 오류
 		//[암기]
 //		String [] sArr = (String[]) list2.toArray(new String[list2.size()]); // 가능
 		String [] sArr = (String[]) list2.toArray(String[]::new); // 가능
 		System.out.println(Arrays.toString(sArr));
 		
-		
-		
-		
-		//		String strlist2 = list2.toString();
-//		System.out.println(strlist2);
-//		String [] strlist2Arr = strlist2.split(",");
-//		System.out.println(Arrays.toString(strlist2Arr));
 		
 	} // main
 

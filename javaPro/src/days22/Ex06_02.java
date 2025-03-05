@@ -20,6 +20,7 @@ public class Ex06_02 {
 		list.add("안우혁");
 		list.add("이정인"); // 내부적으로 주소값 가짐(node가 연결되고 있음)
 		
+		// [양재원, 서주원, 안우혁, 이정인]
 		System.out.println(list); // 순서 유지O
 		
 		list.addFirst("김현수");
@@ -27,11 +28,11 @@ public class Ex06_02 {
 		
 		
 		// 양재원, 서주원 사이에 홍길동 삽입
-//		int index = list.indexOf("서주원");
-//		list.set(index, "홍길동");
+		int index = list.indexOf("서주원");
+		list.set(index, "홍길동");
 		
 		// 안우혁 삭제
-		int index = list.indexOf("안우혁");
+		index = list.indexOf("안우혁");
 		list.remove(index);
 		
 		System.out.println(list);
