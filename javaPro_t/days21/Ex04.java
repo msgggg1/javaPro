@@ -23,9 +23,9 @@ public class Ex04 {
 		int year = d.get( ChronoField.YEAR );
 		System.out.println( year );
 		// 월
-		// int month = d.getMonthValue();
+		 int month = d.getMonthValue();
 		// Month month = d.getMonth();
-		int month = d.get( ChronoField.MONTH_OF_YEAR );
+//		int month = d.get( ChronoField.MONTH_OF_YEAR );
 		System.out.println( month );
 		
 		// 일 
