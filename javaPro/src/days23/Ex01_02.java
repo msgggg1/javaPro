@@ -33,7 +33,7 @@ public class Ex01_02 {
 				lineArr = line.split("[/:]");
 				//lineArr = line.split("(/|:)");
 				
-				for (int i = 0; i < lineArr.length; i++) {
+				for (int i = 1; i < lineArr.length; i++) {
 					team.add(lineArr[i]);
 				} // for i
 				
@@ -42,7 +42,7 @@ public class Ex01_02 {
 			} //  while
 			
 			// 각 팀원 출력형식으로 출력
-			// dispTeam(1,2,3,4);
+			// dispTeam(team1, team2, team3, team4);
 			dispClass(class5);
 			
 		} catch (Exception e) {

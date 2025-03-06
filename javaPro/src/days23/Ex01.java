@@ -36,19 +36,16 @@ public class Ex01 {
 				
 				lineArr = line.split("[/:]");
 				//lineArr = line.split("(/|:)");
-				switch (lineArr[0]) {
-				case "1조": team = team1;
-					break;
-				case "2조": team = team2;
-					break;
-				case "3조": team = team3;
-					break;
-				case "4조": team = team4;
-					break;
+				switch (lineArr[0]) 
+				{
+				case "1조": team = team1; break;
+				case "2조": team = team2; break;
+				case "3조": team = team3; break;
+				case "4조": team = team4; break;
 					
 				} // switch
 				
-				for (int i = 0; i < lineArr.length; i++) {
+				for (int i = 1; i < lineArr.length; i++) {
 					team.add(lineArr[i]);
 				} // for i
 				
@@ -57,7 +54,7 @@ public class Ex01 {
 			} //  while
 			
 			// 각 팀원 출력형식으로 출력
-			// dispTeam(1,2,3,4);
+			// dispTeam(team1, team2, team3, team4);
 			dispClass(class5);
 			
 		} catch (Exception e) {
@@ -78,7 +75,7 @@ public class Ex01 {
 				char seq = 'A';
 				Iterator<String> ir2 = team.iterator();
 				while (ir2.hasNext()) {
-					String name = (String) ir2.next();
+					String name = ir2.next();
 					System.out.printf("   %c. %s\n", seq++, name);
 				}
 			}

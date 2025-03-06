@@ -67,11 +67,14 @@ public class Ex07 {
 			ArrayList<String> team = entry.getValue();
 	
 			char seq = 'A';
-			
-			while (ir2.hasNext()) {
-				String name = ir2.next();
+			Iterator<String> ir = team.iterator();
+			while (ir.hasNext()) {
+				String name = ir.next();
 				System.out.printf("   %c. %s\n", seq++, name);
 		}
+			
+		}
+	}
 		
 		
 

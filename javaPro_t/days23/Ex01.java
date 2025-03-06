@@ -14,7 +14,7 @@ import java.util.Iterator;
 public class Ex01 {
 
 	public static void main(String[] args) {
-		String fileName = ".\\src\\days23\\1차_조편성.txt";
+		String fileName = ".\\days23\\1차_조편성.txt";
 		String line = null;
 		
 		// Set  X 
@@ -79,14 +79,7 @@ public class Ex01 {
 		} // while
 	}
 
-//	private static void dispTeam(
-//			ArrayList<String> team1, 
-//			ArrayList<String> team2, 
-//			ArrayList<String> team3,
-//			ArrayList<String> team4) {
-//		// TODO Auto-generated method stub
-//		
-//	}
+
 
 } // class
   
