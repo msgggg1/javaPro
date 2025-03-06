@@ -6,8 +6,9 @@ import java.util.Stack;
 /**
  * @author msg
  * @date 2025. 3. 5. - 오후 2:48:10
- * @subject 수식괄호검사
- * @content
+ * @subject 스택 활용 예 - 수식계산, [수식괄호검사], 웹브라우저 뒤로/앞으로 등
+ * @content 큐   활용 예 - 최근사용문서, 인쇄작업 대기 목록 등
+ *           [메시지 큐]
  */
 public class Ex07_04 {
 
@@ -18,9 +19,9 @@ public class Ex07_04 {
 			System.out.println("Example : java ExpValidCheck\"((2+3)*1)+3\"");
 			System.exit(0); // 프로그램 종료 매소드
 		} // if
-		
+		//          ((2+3)*1+3		
 		Stack st = new Stack(); //LIFO
-		String expression = args[0];
+		String expression = args[0];// (2+3)*1)+3
 		
 		System.out.println("expression:"+ expression);
 		

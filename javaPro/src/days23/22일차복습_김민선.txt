@@ -1,0 +1,112 @@
+1. 지금까지 배운 컬렉션 클래스 종류와 특징에 대해서 설명하세요.
+Collection -> List -> ArrayList, Stack, Vector : 순서유지O, 중복 가능
+		-> Set -> HashSet		     : 순서유지X, 중복 불가 ( LinkedHashSet 순서 유지 O)
+ArrayList	: 가장 많이 사용
+Vector	: ArrayList와 거의 같으나 멀티스레드에 안전함. 
+Stack		: LIFO 구조를 활용할 때 사용 (수식 검증 등)
+
+ 
+2. Stack과 Queue에 대해서 설명하세요.
+
+ 
+2-2. Stack에 사용되는 메서드를 적으세요. 
+  ㄱ. 요소 추가 메서드 :  push()
+  ㄴ. 마지막 요소 얻어오는 메서드 + 제거O : pop()
+  ㄷ. 마지막 요소 얻어오는 메서드 + 제거X : peek()
+  ㄹ. 요소가 비었는 지 체크하는 메서드 : isEmpty()
+  
+2-3. Queue에 사용되는 메소드를 적으세요.
+  ㄱ. 요소 추가 메서드 :  
+  ㄴ. 마지막 요소 얻어오는 메서드 + 제거O : poll()
+  ㄷ. 마지막 요소 얻어오는 메서드 + 제거X : peek()
+  ㄹ. 요소가 비었는 지 체크하는 메서드 : isEmpty()
+
+3. Deque( Double-Ended Queue ) 에 대해서 특징을 설명하세요.
+	양방향 접근이 가능하다. 
+
+4. 열거자와 반복자에 대해서 설명하세요 .
+	컬렉션 요소에 접근하여 반복적으로 읽어오는 등의 작업은 비슷하지만
+	컬렉션을 읽어오다가 수정 등 발생 -> 반복자: 예외 발생, 열거자: 복사해서 읽어오는 방식이므로 예외 발생X
+	ListIterator : 뒤에서 부터 읽어오기 가능(List 구현한 클래스만)
+
+5. 게임횟수를 입력받아서 로또번호를 출력하는 코딩을 하세요. 
+  ( 조건 : ArrayList 와 LinkedHashSet 컬렉션 클래스 사용 )
+  ( 조건 : main 메서드 안에 모든 코딩을 하세요. )
+
+	Scanner scanner = new Scanner(System.in);
+		System.out.println("> 게임횟수 입력? ");
+		
+		int gameNumber = scanner.nextInt();
+		ArrayList list = new ArrayList();
+		
+		for (int i = 0; i < gameNumber; i++) {
+			Random rnd = new Random();
+			LinkedHashSet lotto = new LinkedHashSet(6);
+			while (lotto.size()<6) {
+				int n = rnd.nextInt(45)+1;
+				lotto.add(n);
+			} //  while
+			list.add(lotto);
+		} // for i
+		
+			for (int j = 0; j < list.size(); j++) {
+				System.out.printf("[%d게임]", j+1);
+				LinkedHashSet lotto = (LinkedHashSet) list.get(j);
+				Iterator ir = lotto.iterator();
+				while (ir.hasNext()) {
+					int lottoNumber = (int) ir.next();
+					System.out.printf("[%02d]", lottoNumber);
+				}
+				System.out.println();
+			} // for j
+
+----------------------------------------------------------------------------------------------
+  
+6. "1차_조편성.txt" 파일을 읽어와서 
+  컬렉션 클래스를 사용하여 
+  아래와 같이 출력하는 코딩을 하세요.  
+  (조건) 각 조원들을 컬렉션 클래스에 저장해서 출력하기.
+  
+출력X 
+[1조]		A. 김유미
+		B. 김현수
+		C. 박지웅
+		D. 변상호
+		E. 서재웅
+[1조]		A. 김유미
+		B. 김현수
+		C. 박지웅
+		D. 변상호
+		E. 서재웅
+[2조]		A. 이진욱
+		B. 최승호
+		C. 최인석
+		D. 김예지
+
+------------------------------------------------------------------------
+String fileName = ".\\src\\days23\\1차_조편성.txt";
+		try (FileReader fileReader = new FileReader(fileName);
+			BufferedReader br = new BufferedReader(fileReader);) {
+			
+			ArrayList groups = new ArrayList();
+
+			while (br.readLine() !=  null) {
+				String group = br.readLine();
+				String [] name = group.split("/");
+				name[0] = name[0].substring(3);
+				
+				groups.add(name);
+				
+				for (int i = 0; i < groups.size(); i++) {
+					System.out.printf("[%d조]", i+1);
+					String [] member = (String[]) groups.get(i);
+					for (int j = 0; j < member.length; j++) {
+						System.out.printf("\t\t%c. %s\n", 65+j ,member[j]);
+					} // for j
+				} // for i
+				
+			} //  while
+			
+	} catch (IOException e) {
+			e.printStackTrace();
+}

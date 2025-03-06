@@ -40,7 +40,6 @@ public class Ex07 {
 		
 		/*
 		s.clear();
-		
 		System.out.println(s.peek());// EmptyStackException
 		*/
 		
