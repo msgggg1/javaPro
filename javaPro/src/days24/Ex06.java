@@ -16,6 +16,7 @@ public class Ex06 {
 		/*
 		String dir = System.getProperty("user.dir");
 		System.out.println(dir);
+		-> C:\E\Class\SS23Class\JavaClass\javaPro
 		*/
 		
 		Properties p = System.getProperties();

@@ -23,15 +23,11 @@ public class Ex04_02 {
 
 	public static void main(String[] args) {
 
-		//Properties<K,V> ->안뜸. String 고정 
 		Properties p = new Properties();
 
 		// Oracle DBMS
-		// 연결하기 위한 문자열( 설정값 ) 필요
-		// DB 연결 문자열
-		//						패키지 명			실제 클래스 명
-		String className ; // JDBC 드라이버
-		//								내 pc     포트번호(-호)       <- IP 주소(-아파트 -동)
+		// DB 연결 문자열( 설정값 )
+		String className ; 
 		String url ;                  
 		String user ;                                                                   
 		String password ;

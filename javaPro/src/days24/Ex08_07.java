@@ -15,7 +15,7 @@ public class Ex08_07 {
 		
 		// ArrayList 원시타입
 		//ArrayList list = new ArrayList();
-		ArrayList<Object> list = new ArrayList<>(); // 원시타입
+		ArrayList<Object> list = new ArrayList<>(); 
 		
 
 	} // main

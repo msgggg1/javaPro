@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Ex08_04 {
 
 	public static void main(String[] args) {
-		/*
+/*		
 		Box03<Fruit> fruitBox = new Box03<Fruit>();
 		Box03<Apple> appleBox = new Box03<Apple>();
 		Box03<Grape> grapeBox = new Box03<Grape>();
@@ -25,20 +25,20 @@ public class Ex08_04 {
 		fruitBox.add(new Apple());
 		fruitBox.add(new Grape()); // 자식 업캐스팅 가능
 		//The method add(Fruit) in the type Box03<Fruit> is not applicable for the arguments (Toy)
-		//fruitBox.add(new Toy()); 
-		//toybox.add(new Grape());
-		*/
+		fruitBox.add(new Toy()); 
+		toyBox.add(new Grape());
+	*/	
 		
 	} // main
 
 } // class
 
-/*
+
 // Fruit
 //   ㄴ Apple
 //   ㄴ Grape
 // Toy
-
+/*
 class Fruit {
 	public String toString() {
 		return "Fruit";

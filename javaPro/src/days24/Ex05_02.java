@@ -23,14 +23,10 @@ import java.util.Properties;
 public class Ex05_02 {
 	// 설정파일 따로 빼놓는게 유지보수 쉬움
 	public static void main(String[] args) {
-		//Properties<K,V> ->안뜸. String 고정 
 
 		// Oracle DBMS
-		// 연결하기 위한 문자열( 설정값 ) 필요
-		// DB 연결 문자열
-		//						패키지 명			실제 클래스 명
+		// DB 연결 문자열( 설정값 )
 		String className ; // JDBC 드라이버
-		//								내 pc     포트번호(-호)       <- IP 주소(-아파트 -동)
 		String url ;                  
 		String user ;                                                                   
 		String password ;

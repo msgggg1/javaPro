@@ -100,7 +100,7 @@ class Box{
 	}
 	*/
 
-/* 자료형 하나하나 box 만듦
+/* 자료형 하나하나 box 만듦 ex) char  short float   Person 등등
 class Box{
 	
 	private int item;

@@ -19,7 +19,8 @@ public class Ex08_06 {
 		System.out.println(juice);
 
 		//[2]
-		// The method makeJuice(FruitBox<Fruit>) in the type Juicer is not applicable for the arguments (FruitBox<Apple>)
+		// The method makeJuice(FruitBox<Fruit>) in the type Juicer 
+		//is not applicable for the arguments (FruitBox<Apple>)
 		FruitBox<Apple> appleBox = new FruitBox<>();
 		juice = Juicer.makeJuice(appleBox);
 		System.out.println(juice);
@@ -51,11 +52,9 @@ class Juice {
 }
 
 // 과일 상자 -> 주스를 생산하는 기기
-
-//[1]
 class Juicer {
 
-	/*
+	/*//[1]
 	static Juice makeJuice(FruitBox<Fruit> box) {
 
 		return new Juice();
@@ -68,7 +67,7 @@ class Juicer {
 		*/
 
 	
-/*
+/*//[2]
 static Juice makeJuice( FruitBox<? extends Fruit> box ) {
     // 
     //
@@ -93,7 +92,8 @@ static Juice makeJuice( FruitBox<? extends Fruit> box ) {
 // 예) 위의 [2] 메소드 -> 제네릭 메서드로 변환
 
 // [4] 제네릭 메소드 변환 예제)
-//	static void printAll(ArrayList<? extends Fruit> list, ArrayList<? extends Fruit list2>) {
+//	static void printAll(ArrayList<? extends Fruit> list
+//	, ArrayList<? extends Fruit> list2) {
 //		
 //	}
 	static <T extends Fruit> void printAll(ArrayList<T> list, ArrayList<T> list2) {

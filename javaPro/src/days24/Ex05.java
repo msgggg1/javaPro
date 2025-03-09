@@ -22,11 +22,8 @@ public class Ex05 {
 
 	public static void main(String[] args) {
 
-		//Properties<K,V> ->안뜸. String 고정 
-
 		// Oracle DBMS
-		// 연결하기 위한 문자열( 설정값 ) 필요
-		// DB 연결 문자열
+		// DB 연결 문자열( 설정값 )
 		//		key					value
 		String className = "oracle.jdbc.driver.OracleDriver"; // JDBC 드라이버
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";                  

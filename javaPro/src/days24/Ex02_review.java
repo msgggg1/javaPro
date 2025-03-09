@@ -7,7 +7,21 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public class Ex02_review {
+		
+	public static void main(String[] args) {
+			
+		HashMap<String, HashMap<String, String>> phoneBook = new HashMap<String, HashMap<String,String>>();
+		
+			
+			
+			
+			
+		} // main
+		
+} // class
 
+	
+	/*
 	static HashMap<String, HashMap<String, String>> phoneBook = new HashMap<>();
 
 	public static void main(String[] args) {
@@ -30,7 +44,13 @@ public class Ex02_review {
 			HashMap<String, String> groupMap = entry.getValue();
 			System.out.printf("* %s [%d]\n",  groupName, groupMap.size() );
 			
-			groupMap.entrySet().iterator();
+			Iterator<Entry<String, String>> ir2 = groupMap.entrySet().iterator();
+			while (ir2.hasNext()) {
+				Entry<String, String> entry2 = ir2.next();
+				String tel = entry2.getKey();
+				String name = entry2.getValue();
+				System.out.printf("\t%s : %s\n", name, tel);
+			} //while
 			
 		} //while
 	}
@@ -53,3 +73,4 @@ public class Ex02_review {
 	}
 
 } // class
+*/

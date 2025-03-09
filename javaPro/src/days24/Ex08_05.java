@@ -12,18 +12,22 @@ import java.util.ArrayList;
 public class Ex08_05 {
 
 	public static void main(String[] args) {
-		/* [ 모든 타입(T)를 담을 수 있는 상자 ]
+	/*	// [ 모든 타입(T)를 담을 수 있는 상자 ]
 		Box04<Fruit> fruitBox = new Box04<Fruit>();
 		Box04<Apple> appleBox = new Box04<Apple>();
 		Box04<Grape> grapeBox = new Box04<Grape>();
 		Box04<Toy> toyBox = new Box04<Toy>();
-		Box04<Integer> intBox = new Box04<Toy>();
-		*/
+		Box04<Integer> intBox = new Box04<Integer>();
 		
-//		FruitBox<Grape> grapeBox = new FruitBox<Grape>();
-//		FruitBox<Toy> toyBox = new FruitBox<Toy>();
+		
+		FruitBox<Grape> grapeBox = new FruitBox<Grape>();
+		// Bound mismatch: 
+		// The type Toy is not a valid substitute for the bounded 
+		// parameter <T extends Fruit> of the type FruitBox<T>
+		FruitBox<Toy> toyBox = new FruitBox<Toy>();
 		
 //		ArrayList<E> list = new ArrayList<>();
+ */
 		
 	} // main
 
