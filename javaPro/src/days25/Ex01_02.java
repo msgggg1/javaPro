@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author msg
@@ -21,11 +23,44 @@ public class Ex01_02 {
 		// >처리시간: 7112600 ns(10^-9)
 		fileCopy_textStream(fileName, copyFileName); // 파일 복사 메서드
 		
+		//클래스명변경(copyFileName);
+		
 		System.out.println("end");
 		
 		
 	} // main
 
+	private static void 클래스명변경(String copyFileName) {
+		StringBuilder sb = new StringBuilder();
+		int code;
+		try (FileReader reader  = new FileReader(copyFileName)){
+			
+			while ( (code = reader.read() ) != -1  ) {
+				 sb.append((char)code) ;
+			} // while
+			
+			//System.out.println( sb.toString() );
+			
+			Pattern pattern = Pattern.compile("Ex01");
+			Matcher matcher = pattern.matcher(sb.toString());
+			
+			if (matcher.find()) {
+				System.out.println( matcher.group() );
+				System.out.printf("start:%d ~ end:%d\n", matcher.start()
+						, matcher.end());
+				matcher.appendReplacement(sb, "CopyEx01");
+			} // if
+			matcher.appendTail(sb);
+			
+			System.out.println(sb.toString());
+			
+			// 파일 덮어쓰기 추가...
+		} catch (Exception e) {
+			System.out.println( e.toString() );
+		} // 
+		
+	}
+	
 	private static void fileCopy_textStream(String source, String target) {
 		long start = System.nanoTime();
 		
@@ -46,7 +81,7 @@ public class Ex01_02 {
 		
 		long end = System.nanoTime();
 		
-		System.out.printf(">처리시간: %d ns\n", end-start);
+		System.out.printf("> 처리시간: %d ns\n", end-start);
 		
 	}
 
