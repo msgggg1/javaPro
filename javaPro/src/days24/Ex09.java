@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 			 ㄴ 정의
  * 				enum 열거형이름 {상수명, 상수명...} ->클래스로 컴파일
  * 			 ㄴ 사용방법
- * 				
+ * 				열거형이름.상수명    
  */
 public class Ex09 {
 	/* 중첩 클래스 의미
@@ -21,18 +21,17 @@ public class Ex09 {
 	*/
 	public static void main(String[] args) {
 		/*
-		 * switch(card){
-		 *  case 1: // 하트
-		 *  break;
-		 *  case Card.HEART: // 옛날 
-		 *  break;
-		 *  case 1: 
-		 *  break;
-		 *  case 1: 
-		 *  break;
-		 * 
+		 * switch( card ){
+		 *    case 1: 뭔지 알 수 없음
+		 *    break;
+		 *    case Card.HEART:  // 하트 -> 옛날에 이렇게 사용
+		 *     break;
+		 *    case 3: // 스페이스 
+		 *    break;
+		 *    case 4:  // 다이아몬드 
+		 *    break;
 		 * }
-		 * */ 
+		 * */
 
 		System.out.println(Card.CLOVER);   //static final // 상수 CLOVER
 		System.out.println(Card.CLOVER.name());   //"CLOVER"
@@ -51,13 +50,13 @@ public class Ex09 {
 
 // enum 이전
 /*
-class Card {
+class Card{
 	public static final int CLOVER = 0;
-	public static final int HEART = 0;
-	public static final int DIAMOND = 0;
-	public static final int SPACE = 0;
+	public static final int HEART = 1;
+	public static final int DIAMOND = 2;
+	public static final int SPACE = 3;
 }
-*/
+ */
 /*
 enum Card { // 동일 패키지 내에서만 사용 가능 (여기서는 days24)
 	CLOVER, HEART, DIAMOND, SPADE
