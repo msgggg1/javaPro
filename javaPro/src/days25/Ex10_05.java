@@ -12,7 +12,7 @@ public class Ex10_05 {
 
 	public static void main(String[] args) {
 		// [문제] 
-		//days25 폴더 안에 upload 폴도 유무 확인하고
+		//days25 폴더 안에 upload 폴더 유무 확인하고
 		// 없으면 폴더 생성
 		String pathname =".\\src\\days25";
 		File parent = new File(pathname);
