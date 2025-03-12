@@ -1,4 +1,5 @@
-package tennisScorer;
+package scorer;
+
 import java.util.Scanner;
 
 public class TennisScorer {
@@ -44,11 +45,11 @@ public class TennisScorer {
 			System.out.println("[ 단식: 'S', 복식: 'D' 를 입력하세요 ]");
 			String strIsDouble = scanner.nextLine().trim();
 			
-			if (strIsDouble.equalsIgnoreCase("s")) {
+			if (strIsDouble.equalsIgnoreCase("d")) {
 				isDouble = true;
 				break;
 			} // if
-			if (strIsDouble.equalsIgnoreCase("d")) {
+			if (strIsDouble.equalsIgnoreCase("s")) {
 				isDouble = false;
 				break;
 			} // if
@@ -65,7 +66,10 @@ public class TennisScorer {
 				String input = scanner.nextLine().trim();
 				try {
 					int sets = Integer.parseInt(input);
-			
+					  if (sets == 3 || sets == 5) {
+	                        this.sets = sets; // 값을 올바르게 저장
+	                        break;
+					  }
 				} catch (NumberFormatException e) {
 					System.out.println("세트 수는 3 또는 5만 입력 가능합니다! 다시 입력하세요.");										
 				}
@@ -73,7 +77,7 @@ public class TennisScorer {
 			
 		} // if
 		// 선수이름/팀명
-		if (isDouble) {
+		if (!isDouble) {
 			System.out.println("[ Player 1 name ? ]"); // 선수 1이름
 			p1.setName(scanner.nextLine());
 			System.out.println("[ Player 2 name ? ]"); // 선수 2이름
@@ -102,7 +106,7 @@ public class TennisScorer {
 	}
 	
 	 boolean checkMatchWin() {
-		if (sets) {
+		if (sets == 3) {
 			if ( p1.getSetpoints() == 2) {
 				System.out.printf("%s , 매치 승리!", p1.getName());
 				return true;
@@ -180,7 +184,7 @@ public class TennisScorer {
 			break;
 		case 1: p2.winPoint();
 		} // switch
-		System.out.printf("%s 득점!",(winner==0? p1 : p2).getName());
+		System.out.printf("%s 득점!\n",(winner==0? p1 : p2).getName());
 		basicDsip();
 		setDisp();
 		scoreDisp();
@@ -197,13 +201,13 @@ public class TennisScorer {
 
 	void scoreDisp() {
 		String [] tennisScore = {"0","15","30","LOVE", "AD"};
-		System.out.printf("\t%d\t\t\t%d", tennisScore[p1.getPoints()], tennisScore[p2.getPoints()]);
+		System.out.printf("\t%s\t\t\t%s", tennisScore[p1.getPoints()], tennisScore[p2.getPoints()]);
 		handleDuece();
 		
 	}
 
 	void setDisp() {
-		System.out.printf("\t\t\t[%d세트]", currentSet);
+		System.out.printf("\t\t\t[%d세트]\n", currentSet);
 		
 	}
 	
@@ -220,3 +224,4 @@ public class TennisScorer {
 	} // handleDuece
 
 } // class
+

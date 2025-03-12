@@ -1,6 +1,6 @@
-package tennisScorer;
+package scorer;
 
-public class field {
+public class Field {
 
 	public static void main(String[] args) {
 		TennisScorer scorer = new TennisScorer();

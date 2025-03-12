@@ -1,7 +1,6 @@
-package tennisScorer;
+package scorer;
 
 public class Player {
-	
 	private String name;
 	private int points = 0;
 	private int games = 0;
@@ -53,7 +52,5 @@ public class Player {
 	public void setSetpoints(int setpoints) {
 		this.setpoints = setpoints;
 	}
-
-
 
 }
