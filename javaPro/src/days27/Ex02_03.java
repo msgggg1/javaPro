@@ -23,6 +23,7 @@ public class Ex02_03 {
 	public static void main(String[] args) {
 		MyFunction f1 = () -> System.out.println("f1.run()...");
 		execute(f1);
+		// 람다식을 매개변수로 사용
 		execute(() -> System.out.println("f1.run()...")); // 람다식을 매개변수로 사용
 		
 		// 2.

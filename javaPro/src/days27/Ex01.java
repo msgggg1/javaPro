@@ -11,7 +11,7 @@ public class Ex01 {
 	public static void main(String[] args) {
 		
 		/*
-		 * 1. 람다식(Lamda expression)
+		 * 1. 람다식(Lambda expression)
 		 * 	1) 자바 두 번의 큰 변화
 		 * 	   JDK 1.5 : 제네릭
 		 * 	   JDK 1.8 : 람다식
@@ -31,11 +31,13 @@ public class Ex01 {
 		 * 5. 람다식 선언 형식
 		 * 	ㄴ 메서드의 이름과 반환타입을 제거하고 
 		 * 		매개변수 선언부와 몸체{} 사이에 -> 연산자를 추가
-		 * 		
+		 * 		예) 메서드
 		 * 		반환타입 메서드이름(매개변수 ...){
 		 * 			명령코딩;
 		 * 		}
-		 * 	
+		 * 		int max(int a, int b){
+		 *        return a > b ? a : b;
+		 *      } 
 		 * 
 		 * 		예) (매개변수 ...) -> {
 		 * 								명령코딩;

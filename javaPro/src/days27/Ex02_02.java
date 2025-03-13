@@ -30,6 +30,10 @@ public class Ex02_02 {
 				return o2.compareTo(o1);
 			}
 		});
+		
+		
+		Collections.sort(list, (o1,  o2) -> o2.compareTo(o1) );
+		
 
 		//functionalInterface : static default여러개 상관 X 추상메서드는 1개
 		System.out.println(list);
