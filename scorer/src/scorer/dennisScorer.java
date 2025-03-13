@@ -22,7 +22,7 @@ public class dennisScorer {
     void gameSetting() {
         // 성별 입력
         while (true) {
-            System.out.println("[ Men or Women? ]\n[남자경기: 'M', 여자경기: 'W' 입력]");
+            System.out.println("[남자경기: 'M', 여자경기: 'W' 입력]");
             String input = scanner.nextLine().trim().toUpperCase();
             if (input.equals("M")) {
                 gender = true;
@@ -126,7 +126,7 @@ public class dennisScorer {
     }
 
     boolean checkGameWin() {
-        if (p1.getPoints() >= 4 || p2.getPoints() >= 4) {
+        if (p1.getPoints() == 4 || p2.getPoints() == 4) {
             if (Math.abs(p1.getPoints() - p2.getPoints()) >= 2) {
                 if (p1.getPoints() > p2.getPoints()) {
                     System.out.println(p1.getName() + " 게임 승리!");
@@ -205,3 +205,4 @@ public class dennisScorer {
         scorer.gameStart();
     }
 }
+
