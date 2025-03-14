@@ -9,6 +9,7 @@ package days27;
 public class Ex02_04 {
 
 	public static void main(String[] args) {
+									//익명객체
 		MyFunction f = (MyFunction)(() -> {}); // 1차적 함수형인터페이스 변환
 		
 		Object obj = (Object)((MyFunction)(() -> {})); // 	Object 변환 가능

@@ -1,5 +1,7 @@
 package days27;
 
+import java.util.function.Function;
+
 /**
  * @author msg
  * @date 2025. 3. 12. - 오전 10:05:30
@@ -14,8 +16,10 @@ public class Ex02_03 {
 	
 	// 2. 리턴값으로 사용한 경우
 	static MyFunction getMyFunction() {
+		
 //		MyFunction f = () -> System.out.println("f1.run()...");
 //		return f;
+		
 		
 		return () -> System.out.println("f1.run()..."); // 리턴값으로 람다식
 	}

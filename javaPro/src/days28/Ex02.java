@@ -28,13 +28,15 @@ public class Ex02 {
 		BiFunction<String, String, Boolean> f2 = String::equals;
 		
 		MyClass obj = new MyClass();
-		//Function<String, Boolean> f3 = (x) -> obj.equals(x);
+//		Function<String, Boolean> f3 = (x) -> obj.equals(x);
 		Function<String, Boolean> f3 = obj::equals;
 		
 		// [생성자의 메서드 참조]
 		//Supplier<MyClass> s = () -> new MyClass();
 		Supplier<MyClass> s = MyClass::new; // 메서드 참조
 		
+		// Lambda expression's parameter s cannot redeclare another 
+		// local variable defined in an enclosing scope. 
 		//BiFunction<Integer, String, MyClass> s2 = (i,str)->new MyClass(i,str);
 		BiFunction<Integer, String, MyClass> s2 = MyClass::new;
 		

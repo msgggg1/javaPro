@@ -12,7 +12,8 @@ import java.util.function.Predicate;
 public class Ex01 {
 
 	public static void main(String[] args) {
-		/*//[1]
+		/*
+		//[1]
 		// f: 16진수 형태의 문자열 입력받아서 int 변환해서 반환
 		Function<String, Integer> f = s -> Integer.parseInt(s, 16);
 		// g: int 입력받아서 2진수 문자열로 반환
@@ -20,7 +21,7 @@ public class Ex01 {
 		
 		// 1) f  2) g	Function 결합	: 1 andThen(2)
 		Function<String, String> h = f.andThen(g);	// 순서 f -> g
-		Function<String, String> h2 = f.compose(g); // 순서 g -> f
+		Function<Integer, Integer> h2 = f.compose(g); // 순서 g -> f
 		System.out.println(h.apply("FF"));
 		System.out.println(h2.apply(2));
 		*/
@@ -33,12 +34,21 @@ public class Ex01 {
 		Predicate<Integer> r = i -> i%2==0;
 		Predicate<Integer> notP = p.negate(); // 부정
 		
+		//                        t    &&  t
 		Predicate<Integer> all = notP.and(q.or(r));
 		System.out.println(all.test(150));
 		*/
 		
-		// [3]
 		
+		// [3]
+		String s1 = "abc";
+		String s2 = "abc";
+		
+		Predicate<String> p2 = Predicate.isEqual( s1 );
+		boolean result = p2.test(s2);  // s1.equals(   s2 )
+		System.out.println(result); // 
+		
+	
 		
 	} // main
 

@@ -57,7 +57,7 @@ class ScoreBoard implements Serializable {
             case 1: return "15";
             case 2: return "30";
             case 3: return "40";
-            default: return "A"; // Advantage
+            default: return "승리"; 
         }
     }
 
@@ -91,7 +91,7 @@ class ScoreBoard implements Serializable {
     }
 
     private void checkGameWin(Player scorer, Player opponent) {
-        if (scorer.getPoints() >= 4 && (scorer.getPoints() - opponent.getPoints()) >= 2) {
+        if (scorer.getPoints() >= 3 && (scorer.getPoints() - opponent.getPoints()) >= 2) {
             scorer.winGame();
             opponent.resetPoints();
             updateScoreStatus();
@@ -107,7 +107,7 @@ class ScoreBoard implements Serializable {
             displayScoreBoard();  // 6:6을 확인할 수 있도록 즉시 전광판 출력
         }
         // 7게임 이상 & 2게임 차이로 세트가 끝나는 경우
-        else if (scorer.getGamesWon() >= 7 && (scorer.getGamesWon() - opponent.getGamesWon()) >= 2) {
+        else if (scorer.getGamesWon() >= 6 && (scorer.getGamesWon() - opponent.getGamesWon()) >= 2) {
             scorer.winSet();
             opponent.resetGames();  // 세트 종료 후 상대편 게임도 0으로
 
@@ -133,7 +133,7 @@ class ScoreBoard implements Serializable {
         if (scorer.getPoints() >= requiredPoints && (scorer.getPoints() - opponent.getPoints()) >= 2) {
             scorer.winGame();
             scorer.winSet();
-            opponent.resetGames();
+            opponent.resetGames(); 
 
             tieBreak = false;
             player1.resetPoints();
@@ -181,6 +181,7 @@ class ScoreBoard implements Serializable {
         System.out.println("Score: " + scoreStatus);
         System.out.println("----------------------------------");
     }
+    
 }
 
 class Save {
