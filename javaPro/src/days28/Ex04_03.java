@@ -33,7 +33,7 @@ public class Ex04_03 {
 		
 		// IntStream (기본형스트림) -> 스트림
 		
-	//	Stream<String> slotto = lotto.mapToObj(i -> i + "/");
+//		Stream<String> slotto = lotto.mapToObj(i -> i + "/");
 		Stream<String> slotto = lotto.sorted().mapToObj(i -> i + "/");
 		slotto.forEach(System.out::print);
 	} // main

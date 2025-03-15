@@ -42,7 +42,7 @@ public class Ex04_02 {
 		
 		// 5) is 중복 제거 -> 정렬 -> 3개
 		/*
-		IntStream is2 = is.distinct().sorted().limit(3);
+		IntStream is2 = is.distinct().sorted().skip(2).limit(3);
 		is2.forEach(System.out::println);
 		*/
 		
