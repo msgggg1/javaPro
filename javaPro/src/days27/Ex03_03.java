@@ -17,7 +17,7 @@ public class Ex03_03 {
 	public static void main(String[] args) {
 		
 		IntSupplier s = () -> (int)(Math.random()*100)+1;
-		IntConsumer c = i -> System.out.println(i+",");
+		IntConsumer c = i -> System.out.print(i+",");
 		IntPredicate p = i -> i%2 == 0;
 		IntUnaryOperator op = i -> i * 2;
 				
