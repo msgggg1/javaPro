@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 public class Ex06 {
 
 	public static void main(String[] args) {
+		// Stream.of()     배열-> 스트림 변환 메서드
 		Stream<Student> st = Stream.of(
 	               new Student("이자바",3,300),
 	               new Student("김자바",1, 200),
@@ -24,6 +25,8 @@ public class Ex06 {
 	               new Student("감자바", 3, 180)
 	            );
 		// 총점으로 내림차순 정렬
+		// st.sorted().forEach(System.out::println);
+		
 		st.sorted().forEach(System.out::println); // 기본정렬기능 -> total 점수 기준
 		
 		// 1차 정렬 반별로 정렬
